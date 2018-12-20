@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case test for valid credential login</description>
+   <name>TC_invalid_creds</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>cc72a762-a422-4f87-ad39-76187f483cfb</testCaseGuid>
+   <variable>
+      <defaultValue>'https://dev61.calvarycch.org/content/admin_login.php'</defaultValue>
+      <description></description>
+      <id>a031a349-e126-4048-ac42-edb2c885c7b9</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>'Media'</defaultValue>
+      <description></description>
+      <id>1da9f9bb-030d-46ca-a162-863543234245</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>'123pass'</defaultValue>
+      <description></description>
+      <id>a5f3af76-b786-4e5b-9354-9824c7d4d927</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>

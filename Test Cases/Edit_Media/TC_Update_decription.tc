@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case will check for updated speaker</description>
+   <name>TC_Update_decription</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>4bdc9392-3fdb-49be-a9c2-d0d45d0fbe6a</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>105922ca-418d-4d31-88cf-a73bb5fa6c5b</id>
+      <masked>false</masked>
+      <name>descriptionText</name>
+   </variable>
+</TestCaseEntity>

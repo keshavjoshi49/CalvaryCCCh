@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case is checking the scripture drop down update</description>
+   <name>TC_Scripture</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c23504a3-fb84-4e20-b217-a233b828a1e3</testCaseGuid>
+</TestCaseEntity>

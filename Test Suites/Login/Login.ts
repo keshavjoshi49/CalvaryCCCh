@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>Login</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <lastRun>2018-12-16T12:23:57</lastRun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>8aef558c-d692-48f2-87f8-bf7b7ba592b7</testSuiteGuid>
+   <testCaseLink>
+      <guid>03a8ed98-baf5-4c58-84d7-b95b83aa6adc</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Login/TC_valid_creds</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>58b4498d-980a-4f4f-b7dc-7d68faefdb50</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/URL/url</testDataId>
+      </testDataLink>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>52560fee-cbef-497a-a94b-718856d69e93</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Login/TD_valid_creds</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>58b4498d-980a-4f4f-b7dc-7d68faefdb50</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>url</value>
+         <variableId>1a78a52c-11ab-432e-982a-c9740cbf0427</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>52560fee-cbef-497a-a94b-718856d69e93</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>username</value>
+         <variableId>cfdf9da2-de49-4845-9524-42a24b2cc088</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>52560fee-cbef-497a-a94b-718856d69e93</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>password</value>
+         <variableId>02f7527c-85b4-40e0-b654-8c281ddff16e</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>79d7e372-0dbe-44b0-9f78-7df4fdd3b373</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Login/TC_log_out</testCaseId>
+   </testCaseLink>
+</TestSuiteEntity>

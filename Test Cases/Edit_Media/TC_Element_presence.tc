@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case check that all the buttons and fields are present in the edit mode.</description>
+   <name>TC_Element_presence</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>37d731d0-57c6-4c5a-89c2-856978f37e93</testCaseGuid>
+</TestCaseEntity>

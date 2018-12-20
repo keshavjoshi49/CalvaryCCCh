@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case will check for updated speaker</description>
+   <name>TC_Update_speaker</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d8cb10a6-b897-4247-8198-661cdf6c0dc7</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f759f586-1d89-4c9e-bf8a-6a6fc66c2350</id>
+      <masked>false</masked>
+      <name>cspeaker</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>0c9bc7aa-fa0b-4bc9-9679-80146240d4bf</id>
+      <masked>false</masked>
+      <name>useries</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bd4bde93-ae50-4936-9791-ea5b3314bec0</id>
+      <masked>false</masked>
+      <name>speakerText</name>
+   </variable>
+</TestCaseEntity>

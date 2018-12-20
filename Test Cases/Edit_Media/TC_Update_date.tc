@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case validates that the user can edit and update the date.</description>
+   <name>TC_Update_date</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6f5c0fa0-796c-47e5-b8b4-a8b9ca252f14</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ef242e01-95fe-491a-ad8c-7b2cec1e6084</id>
+      <masked>false</masked>
+      <name>cdate</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>1cf6fa5a-783d-4f6e-b4a3-2d3c2a586692</id>
+      <masked>false</masked>
+      <name>udate</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>cf40ac9c-fa3c-4a1f-a16f-56b2cad960f9</id>
+      <masked>false</masked>
+      <name>a</name>
+   </variable>
+</TestCaseEntity>
