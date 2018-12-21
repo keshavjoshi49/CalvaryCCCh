@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//td[@id='study_2']</value>
+         <value>//input[@name='vimeo_url']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

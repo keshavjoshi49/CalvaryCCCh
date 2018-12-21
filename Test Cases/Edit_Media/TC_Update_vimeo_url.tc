@@ -8,22 +8,8 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>584f667d-b261-41a5-a075-d0c33e2258d0</id>
+      <id>95f4a2ce-99e1-4951-8223-ad86303a6163</id>
       <masked>false</masked>
-      <name>cspeaker</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>be39df95-7ee3-4420-8e57-adbbb6027612</id>
-      <masked>false</masked>
-      <name>useries</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>62cff283-12ba-4f20-a46e-06da94fc9b81</id>
-      <masked>false</masked>
-      <name>speakerText</name>
+      <name>vimeoUrl</name>
    </variable>
 </TestCaseEntity>

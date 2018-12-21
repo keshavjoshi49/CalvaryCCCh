@@ -214,7 +214,7 @@
    <testCaseLink>
       <guid>4bde1f76-a47f-45d5-a1ca-7147447cc6ed</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Edit_Media/TC_Update_keywords</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -230,6 +230,27 @@
          <type>DATA_COLUMN</type>
          <value>KeywordsText</value>
          <variableId>d18270bf-b6ed-4a93-95cd-3537f6543b25</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>87737929-0312-4bfb-a447-82dc109c5782</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Edit_Media/TC_Update_vimeo_url</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>ff353035-395b-450a-9fcb-f3c6f1a99d48</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>ff353035-395b-450a-9fcb-f3c6f1a99d48</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>VimeoUrl</value>
+         <variableId>95f4a2ce-99e1-4951-8223-ad86303a6163</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

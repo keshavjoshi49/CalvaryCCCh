@@ -41,18 +41,3 @@ uscripture1 = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/bo
 
 WebUI.verifyMatch(uscripture, uscripture1, false)
 println("pass")
-//
-//WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_media_fields/speaker_drop_down'),'zzznew', false)
-//
-//WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/speaker_input_field'), 10)
-//WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/speaker_input_field'),speakerText)
-//
-//cspeaker=WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/speaker_input_field'),'value')
-//println (cspeaker)
-//
-//WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-//WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/speaker'), 10)
-//
-//WebUI.verifyElementText(findTestObject('Edit_Media/Edit_media_fields/speaker'), cspeaker)
-//
-//println("pass")

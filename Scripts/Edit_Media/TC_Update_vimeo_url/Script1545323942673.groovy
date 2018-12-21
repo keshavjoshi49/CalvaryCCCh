@@ -23,18 +23,17 @@ WebUI.switchToWindowTitle('CCCH - Media Center Administration')
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
 
 WebUI.click(findTestObject('Edit_Media/Edit_media_fields/vimeo_radio_button'))
-
-WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_media_fields/speaker_drop_down'),'zzznew', false)
-
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/speaker_input_field'), 10)
-WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/speaker_input_field'),speakerText)
-
-cspeaker=WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/speaker_input_field'),'value')
-println (cspeaker)
-
+WebUI.click(findTestObject('Edit_Media/Edit_media_fields/vimeo_clear_button'))
+WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/vimeo_input_field'), vimeoUrl)
+println(vimeoUrl)
 WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/speaker'), 10)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/title'), 10)
 
-WebUI.verifyElementText(findTestObject('Edit_Media/Edit_media_fields/speaker'), cspeaker)
+WebUI.click(findTestObject('Edit_Media/Edit_media_fields/first_media_link'))
+WebUI.switchToWindowTitle('CCCH - Media Center Administration')
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
 
+uvimeo=WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/vimeo_input_field'), 'value')
+println(uvimeo)
+WebUI.verifyMatch(vimeoUrl, uvimeo, false)
 println("pass")
