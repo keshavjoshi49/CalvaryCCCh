@@ -14,15 +14,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('')
-
 WebUI.navigateToUrl(url)
 
+//Pass different username or password
 WebUI.setText(findTestObject('Login/username'), username)
-
 WebUI.setText(findTestObject('Login/password'),password)
 
 WebUI.click(findTestObject('Login/input'))
+
+//Assertion
 WebUI.verifyTextPresent('Invalid username or password', true, FailureHandling.STOP_ON_FAILURE)
-
-//WebUI.closeBrowser()
-

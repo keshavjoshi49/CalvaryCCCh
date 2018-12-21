@@ -15,4 +15,5 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.click(findTestObject('Login/logout'))
 
+//Assertion
 WebUI.verifyTextNotPresent('Media Admin Menu', true, FailureHandling.STOP_ON_FAILURE)

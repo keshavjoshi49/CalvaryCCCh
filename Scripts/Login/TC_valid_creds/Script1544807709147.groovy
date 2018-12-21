@@ -16,18 +16,16 @@ import internal.GlobalVariable as GlobalVariable
 //url.getValue(findTestData(null), username) == 0
 
 WebUI.openBrowser('')
-
 WebUI.navigateToUrl(url)
 
+//Pass different username and passwords
 WebUI.setText(findTestObject('Login/username'), username)
-
 WebUI.setText(findTestObject('Login/password'), password)
-
 WebUI.click(findTestObject('Login/input'))
-println(username)
+
 WebUI.waitForElementPresent(findTestObject('Login/logout'))
+
+//Assertion
 WebUI.verifyTextPresent('Media Admin Menu', true, FailureHandling.STOP_ON_FAILURE)
 
-
-//WebUI.closeBrowser()
 
