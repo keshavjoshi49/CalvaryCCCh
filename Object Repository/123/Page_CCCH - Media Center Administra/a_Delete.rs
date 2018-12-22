@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>td_The Hour Has Come</name>
+   <name>a_Delete</name>
    <tag></tag>
-   <elementGuidId>b82e3e94-1d79-44c5-81f3-d6cbb407da3e</elementGuidId>
+   <elementGuidId>374fd4fe-5328-4dce-8891-fd423b19d0c0</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//td[@id='title_2']</value>
+         <value>//a[contains(text(),'Delete')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -17,76 +17,76 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>td</value>
+      <value>a</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>id</name>
+      <name>href</name>
       <type>Main</type>
-      <value>title_2</value>
+      <value>javascript:;</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>width</name>
+      <name>onclick</name>
       <type>Main</type>
-      <value>235</value>
+      <value>check_del_file('smx/SMX443.mp3','5737');</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>The Hour Has Come</value>
+      <value>Delete</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;title_2&quot;)</value>
+      <value>id(&quot;content&quot;)/div[1]/table[1]/tbody[1]/tr[1]/td[1]/form[1]/fieldset[1]/table[@class=&quot;smaller&quot;]/tbody[1]/tr[14]/td[1]/label[1]/a[2]</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//td[@id='title_2']</value>
+      <value>//a[@onclick=&quot;check_del_file('smx/SMX443.mp3','5737');&quot;]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//tr[@id='test_row_2']/td[3]</value>
+      <value>//div[@id='content']/div/table/tbody/tr/td/form/fieldset/table/tbody/tr[14]/td/label/a[2]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <value>//a[contains(text(),'Delete')]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Lk 16:32 - 17:22'])[1]/following::td[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='YouTube URL'])[1]/following::a[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Study'])[1]/following::td[4]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Notes'])[1]/preceding::a[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Jack Hibbs'])[3]/preceding::td[2]</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Sun'])[1]/preceding::td[4]</value>
+      <name>xpath:href</name>
+      <value>(//a[contains(@href, 'javascript:;')])[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//div[3]/table/tbody/tr/td/table/tbody/tr/td[3]</value>
+      <value>//a[2]</value>
    </webElementXpaths>
 </WebElementEntity>

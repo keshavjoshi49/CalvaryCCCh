@@ -3,11 +3,11 @@
    <description></description>
    <name>input</name>
    <tag></tag>
-   <elementGuidId>e731d37b-a1fe-4f4c-af22-fff52bcdab53</elementGuidId>
+   <elementGuidId>828a9289-0824-4f77-a961-2edff25eba56</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@value='      Submit       ']</value>
+         <value>//input[@value='Submit']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -31,7 +31,14 @@
       <matchCondition>equals</matchCondition>
       <name>value</name>
       <type>Main</type>
-      <value>      Submit       </value>
+      <value>Submit</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>onclick</name>
+      <type>Main</type>
+      <value>return validateLogin();</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -44,13 +51,13 @@
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//input[@value='      Submit       ']</value>
+      <value>//input[@value='Submit']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//form[@id='form1']/div[3]/p/input</value>
+      <value>//form[@id='form1']/div[4]/p/input</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -68,6 +75,6 @@
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//div[3]/p/input</value>
+      <value>//div[4]/p/input</value>
    </webElementXpaths>
 </WebElementEntity>

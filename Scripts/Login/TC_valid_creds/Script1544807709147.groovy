@@ -23,7 +23,7 @@ WebUI.setText(findTestObject('Login/username'), username)
 WebUI.setText(findTestObject('Login/password'), password)
 WebUI.click(findTestObject('Login/input'))
 
-WebUI.waitForElementPresent(findTestObject('Login/logout'))
+WebUI.waitForElementPresent(findTestObject('Login/logout'),10)
 
 //Assertion
 WebUI.verifyTextPresent('Media Admin Menu', true, FailureHandling.STOP_ON_FAILURE)

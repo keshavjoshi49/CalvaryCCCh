@@ -13,14 +13,14 @@
       <name>url</name>
    </variable>
    <variable>
-      <defaultValue>'Media'</defaultValue>
+      <defaultValue>'MediaCenter'</defaultValue>
       <description></description>
       <id>cfdf9da2-de49-4845-9524-42a24b2cc088</id>
       <masked>false</masked>
       <name>username</name>
    </variable>
    <variable>
-      <defaultValue>'123pass'</defaultValue>
+      <defaultValue>'password123'</defaultValue>
       <description></description>
       <id>02f7527c-85b4-40e0-b654-8c281ddff16e</id>
       <masked>false</masked>

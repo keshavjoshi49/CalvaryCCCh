@@ -13,6 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+//This test case check that the editing of scripture field.
 WebUI.click(findTestObject('Edit_Media/Edit_media_fields/first_media_link'))
 
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')

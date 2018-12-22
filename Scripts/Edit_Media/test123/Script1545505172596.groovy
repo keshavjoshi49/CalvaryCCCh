@@ -12,19 +12,24 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import java.util.Date
-import java.text.SimpleDateFormat
+import org.openqa.selenium.Keys as Keys
 
-mydate = new Date()
-println(mydate)
- abc='12/9/2018'
- Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(abc);
- dat=date1.format("dd")
- mon=date1.format("MM")
- println(date1)
- println(dat)
- println(mon)
- Scripture
- 
- 
- 
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('https://dev61.calvarycch.org/content/admin_login.php')
+
+WebUI.setText(findTestObject('Object Repository/123/Page_CCCH - Content Management Logi/input_Login_access_login'), 'MediaCenter')
+
+WebUI.setEncryptedText(findTestObject('Object Repository/123/Page_CCCH - Content Management Logi/input_Password_access_password'), 
+    '8SQVv/p9jVTHLrggi8kCzw==')
+
+WebUI.click(findTestObject('Object Repository/123/Page_CCCH - Content Management Logi/input'))
+
+WebUI.click(findTestObject('Object Repository/123/Page_Media Center - Calvary Chapel/td_New Title Update'))
+
+WebUI.switchToWindowTitle('CCCH - Media Center Administration')
+
+WebUI.click(findTestObject('Object Repository/123/Page_CCCH - Media Center Administra/a_Delete'))
+
+WebUI.click(findTestObject('Object Repository/123/Page_CCCH - Media Center Administra/input_Show at top of Media Cen'))
+

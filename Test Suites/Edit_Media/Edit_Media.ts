@@ -235,7 +235,7 @@
    <testCaseLink>
       <guid>87737929-0312-4bfb-a447-82dc109c5782</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Edit_Media/TC_Update_vimeo_url</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -252,5 +252,11 @@
          <value>VimeoUrl</value>
          <variableId>95f4a2ce-99e1-4951-8223-ad86303a6163</variableId>
       </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>cfe94313-97aa-4a45-be8e-26913326b0ab</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Edit_Media/TC_Upload_audio_file</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

@@ -3,11 +3,11 @@
    <description></description>
    <name>input_Login_access_login</name>
    <tag></tag>
-   <elementGuidId>9dd440c4-8a22-41ef-b186-a24ee757de2a</elementGuidId>
+   <elementGuidId>1e92609f-9d74-4406-9938-baa9a97aca50</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@name='access_login']</value>
+         <value>//input[@id='access_login']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -41,23 +41,30 @@
       <value>off</value>
    </webElementProperties>
    <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>access_login</value>
+   </webElementProperties>
+   <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;form1&quot;)/div[@class=&quot;grid_4&quot;]/p[1]/input[1]</value>
+      <value>id(&quot;access_login&quot;)</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//input[@name='access_login']</value>
+      <value>//input[@id='access_login']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//form[@id='form1']/div/p/input</value>
+      <value>//form[@id='form1']/div[2]/p/input</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -81,7 +88,7 @@
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('id(', '&quot;', 'form1', '&quot;', ')/div[@class=', '&quot;', 'grid_4', '&quot;', ']/p[1]/input[1]')])[1]/preceding::input[3]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('id(', '&quot;', 'access_login', '&quot;', ')')])[1]/preceding::input[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
