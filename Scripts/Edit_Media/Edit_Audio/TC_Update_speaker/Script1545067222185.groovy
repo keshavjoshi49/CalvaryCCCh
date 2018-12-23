@@ -14,25 +14,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-
-
-
-WebUI.click(findTestObject('Edit_Media/Edit_media_fields/first_media_link'))
-
+//This test case check that the editing of audio speaker field.
+//Edit the media that is on the top.
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
 
-WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_media_fields/speaker_drop_down'),'zzznew', false)
-
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/speaker_input_field'), 10)
-WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/speaker_input_field'),speakerText)
-
-cspeaker=WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/speaker_input_field'),'value')
+//Add new speaker and save the speaker name and save the form.
+WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/speaker_drop_down'),'zzznew', false)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/speaker_input_field'), 10)
+WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/speaker_input_field'),speakerText)
+cspeaker=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/speaker_input_field'),'value')
 println (cspeaker)
-
 WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/speaker'), 10)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/speaker'), 10)
 
-WebUI.verifyElementText(findTestObject('Edit_Media/Edit_media_fields/speaker'), cspeaker)
-
+//Assertion
+WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/speaker'), cspeaker)
 println("pass")

@@ -14,22 +14,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-
-WebUI.click(findTestObject('Edit_Media/Edit_media_fields/first_media_link'))
-
+//This test case check that the editing of audio series field.
+//Edit the media that is on the top.
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
 
-WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_media_fields/series_drop_down'),'zzznew', false)
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/series_input_field'), 10)
-WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/series_input_field'),seriesText)
-
-cseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/series_input_field'), 'value')
+// Add a new series and save the series name and submit the form
+WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/series_drop_down'),'zzznew', false)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'), 10)
+WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'),seriesText)
+cseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'), 'value')
 println (cseries)
-
 WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/series'), 10)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series'), 10)
 
-
-WebUI.verifyElementText(findTestObject('Edit_Media/Edit_media_fields/series'), cseries)
+//Assertion
+WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/series'), cseries)
 println("pass")

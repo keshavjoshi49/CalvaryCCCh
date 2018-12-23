@@ -17,7 +17,7 @@ import internal.GlobalVariable as GlobalVariable
 
 
 //WebUI.waitForElementPresent(findTestObject('Login/logout'))
-WebUI.click(findTestObject('Edit_Media/Edit_media_fields/first_media_link'))
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)

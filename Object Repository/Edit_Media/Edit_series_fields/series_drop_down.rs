@@ -3,11 +3,11 @@
    <description></description>
    <name>series_drop_down</name>
    <tag></tag>
-   <elementGuidId>482c7dda-dcaa-45d0-bf9d-d4c6501c0428</elementGuidId>
+   <elementGuidId>4d1db631-01ae-4147-9664-fe23f3f54376</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//td[@id='TDseries']/label/select</value>
+         <value>//td[@id='SeriesInfo']/select[@id='series_information_select']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -173,28 +173,4 @@
       <type>Main</type>
       <value>id(&quot;TDseries&quot;)/label[1]/select[1]</value>
    </webElementProperties>
-   <webElementXpaths>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:attributes</name>
-      <value>//select[@name='series']</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:idRelative</name>
-      <value>//td[@id='TDseries']/label/select</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Index'])[1]/preceding::select[2]</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:position</name>
-      <value>//td/label/select</value>
-   </webElementXpaths>
 </WebElementEntity>

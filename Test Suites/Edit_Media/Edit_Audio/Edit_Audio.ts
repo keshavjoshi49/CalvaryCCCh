@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description>This suits contains all the test cases of edit media page</description>
-   <name>Edit_Media</name>
+   <name>Edit_Audio</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>

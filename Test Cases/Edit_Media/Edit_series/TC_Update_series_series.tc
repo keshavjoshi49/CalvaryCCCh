@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case will check for updated series.</description>
+   <name>TC_Update_series_series</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a1c9644d-7273-4175-800d-876b1e3b1989</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bbfdbba3-222f-4040-903a-8f30416ce5a4</id>
+      <masked>false</masked>
+      <name>cseries</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f8547d32-9432-408b-8be9-968924df3582</id>
+      <masked>false</masked>
+      <name>useries</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>6eec12f3-8c08-46d6-b39c-8425d9e1a00f</id>
+      <masked>false</masked>
+      <name>seriesText</name>
+   </variable>
+</TestCaseEntity>

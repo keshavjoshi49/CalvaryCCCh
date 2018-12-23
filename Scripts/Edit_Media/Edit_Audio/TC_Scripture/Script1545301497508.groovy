@@ -14,31 +14,35 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 //This test case check that the editing of scripture field.
-WebUI.click(findTestObject('Edit_Media/Edit_media_fields/first_media_link'))
-
+//Edit the media that is on the top.
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
 
-cscripture = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/book'), 'value')
+//Get the current scripture and update the different scripture
+cscripture = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
 println (cscripture)
-
 if (cscripture=='1')
-
-WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_media_fields/book'),'2', false)
-
+{
+	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/book'),'2', false)
+}
 else
-WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_media_fields/book'),'1', false)
+{
+	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/book'),'1', false)
+}
 
-
-uscripture = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/book'), 'value')
+//Get the updated scripture value and submit the form
+uscripture = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
 println (uscripture)
 WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/speaker'), 10)
-WebUI.click(findTestObject('Edit_Media/Edit_media_fields/first_media_link'))
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/speaker'), 10)
 
+//Open the same first media again and check compare scripture value.
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
-uscripture1 = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/book'), 'value')
+uscripture1 = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
 
+//Assertion
 WebUI.verifyMatch(uscripture, uscripture1, false)
 println("pass")

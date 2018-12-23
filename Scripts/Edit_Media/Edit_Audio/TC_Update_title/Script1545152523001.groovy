@@ -13,26 +13,22 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+//This test case check that the editing of audio Title field.
+//Edit the media that is on the top.
 
-
-
-
-WebUI.click(findTestObject('Edit_Media/Edit_media_fields/first_media_link'))
-
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
 
-
-WebUI.clearText(findTestObject('Edit_Media/Edit_media_fields/title_input_field'))
-
-WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/title_input_field'),titleText)
-
-ctitle=WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/title_input_field'), 'value')
+//Clear the title field and add a new title and save the form.
+WebUI.clearText(findTestObject('Edit_Media/Edit_audio_fields/title_input_field'))
+WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/title_input_field'),titleText)
+ctitle=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/title_input_field'), 'value')
 println (ctitle)
 WebUI.delay(5)
 WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_media_fields/title'), 10)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/title'), 10)
 
-WebUI.verifyElementText(findTestObject('Edit_Media/Edit_media_fields/title'), ctitle)
-
+//Assertion
+WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/title'), ctitle)
 println("pass")

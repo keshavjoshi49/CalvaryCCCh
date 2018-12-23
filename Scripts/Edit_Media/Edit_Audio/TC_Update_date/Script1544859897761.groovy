@@ -16,40 +16,35 @@ import groovy.time.TimeCategory
 import java.text.DateFormat
 import java.util.Date
 
-//cdate = WebUI.getText(findTestObject('Edit_Media/date'))
-//
-//println(cdate)
-
-WebUI.click(findTestObject('Edit_Media/Edit_media_fields/first_media_link'))
-
+//This test case check that the editing of date field.
+//Edit the media that is on the top.
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
 
-month = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/Month'), 'value')
-
+//Get the current month and update the different month
+month = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Month'), 'value')
 if (month=='12')
 {
-	WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/Month'),'10')
+	WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/Month'),'10')
 }
 else
 {
-	WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/Month'),'12')
+	WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/Month'),'12')
 }
-umonth = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/Month'), 'value')
-day = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/Day'), 'value')
-year = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/Year'), 'value')
-
-
+//Get updated month,day and year and create a date and then submit the form.
+umonth = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Month'), 'value')
+day = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Day'), 'value')
+year = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Year'), 'value')
 date=WebUI.concatenate(umonth,'/',day,'/',year)
-
 println(date)
-
 WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
+WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
 
-WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 20)
+//Get the date on the listing page and compare it with previous date.
 udate = WebUI.getText(findTestObject('Edit_Media/date'))
 println(udate)
+//Assertion
+WebUI.verifyMatch(udate,date, false)
 
-Date formattedDate =new SimpleDateFormat("MM/d/yyyy").parse(udate)
-println(formatteddate)
 
