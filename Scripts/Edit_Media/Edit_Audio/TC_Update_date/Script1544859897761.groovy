@@ -12,32 +12,44 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-
+import groovy.time.TimeCategory
 import java.text.DateFormat
 import java.util.Date
 
-cdate = WebUI.getText(findTestObject('Edit_Media/date'))
-
-println(cdate)
+//cdate = WebUI.getText(findTestObject('Edit_Media/date'))
+//
+//println(cdate)
 
 WebUI.click(findTestObject('Edit_Media/Edit_media_fields/first_media_link'))
 
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
 
-a = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/Month'), 'value')
-println(a)
-if (a=='12')
+month = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/Month'), 'value')
 
-WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/Month'),'10')
+if (month=='12')
+{
+	WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/Month'),'10')
+}
 else
-WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/Month'),'12')
+{
+	WebUI.setText(findTestObject('Edit_Media/Edit_media_fields/Month'),'12')
+}
+umonth = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/Month'), 'value')
+day = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/Day'), 'value')
+year = WebUI.getAttribute(findTestObject('Edit_Media/Edit_media_fields/Year'), 'value')
 
-//WebUI.waitForElementClickable('Edit_Media/Buttons/submit_button')
+
+date=WebUI.concatenate(umonth,'/',day,'/',year)
+
+println(date)
+
 WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
 
-WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 20)
 udate = WebUI.getText(findTestObject('Edit_Media/date'))
 println(udate)
-if(cdate==udate)
-println("pass")
+
+Date formattedDate =new SimpleDateFormat("MM/d/yyyy").parse(udate)
+println(formatteddate)
+

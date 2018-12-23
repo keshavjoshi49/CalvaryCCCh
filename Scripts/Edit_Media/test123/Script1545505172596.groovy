@@ -13,23 +13,13 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import java.text.DateFormat
+import java.util.Date
+import java.text.SimpleDateFormat;
 
-WebUI.openBrowser('')
 
-WebUI.navigateToUrl('https://dev61.calvarycch.org/content/admin_login.php')
+string d ='12/09/2018'
 
-WebUI.setText(findTestObject('Object Repository/123/Page_CCCH - Content Management Logi/input_Login_access_login'), 'MediaCenter')
+Date ud = new SimpleDateFormat("MM/dd/yyyy").parse(d)
 
-WebUI.setEncryptedText(findTestObject('Object Repository/123/Page_CCCH - Content Management Logi/input_Password_access_password'), 
-    '8SQVv/p9jVTHLrggi8kCzw==')
-
-WebUI.click(findTestObject('Object Repository/123/Page_CCCH - Content Management Logi/input'))
-
-WebUI.click(findTestObject('Object Repository/123/Page_Media Center - Calvary Chapel/td_New Title Update'))
-
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-
-WebUI.click(findTestObject('Object Repository/123/Page_CCCH - Media Center Administra/a_Delete'))
-
-WebUI.click(findTestObject('Object Repository/123/Page_CCCH - Media Center Administra/input_Show at top of Media Cen'))
-
+println(ud)
