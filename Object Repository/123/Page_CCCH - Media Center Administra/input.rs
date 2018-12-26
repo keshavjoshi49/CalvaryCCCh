@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>td_New Title Update</name>
+   <name>input</name>
    <tag></tag>
-   <elementGuidId>49c97dea-b210-4f83-b9bd-bd6c62ae346b</elementGuidId>
+   <elementGuidId>4322fd64-b480-4923-aaf6-9b6105f99cac</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//td[@id='title_2']</value>
+         <value>//input[@value='Save Series Information']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -17,76 +17,57 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>td</value>
+      <value>input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>id</name>
+      <name>type</name>
       <type>Main</type>
-      <value>title_2</value>
+      <value>submit</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>width</name>
+      <name>value</name>
       <type>Main</type>
-      <value>235</value>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>text</name>
-      <type>Main</type>
-      <value>New Title Update</value>
+      <value>Save Series Information</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;title_2&quot;)</value>
+      <value>id(&quot;seriesinfoform&quot;)/fieldset[1]/table[@class=&quot;smaller&quot;]/tbody[1]/tr[9]/td[1]/input[2]</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
-      <value>//td[@id='title_2']</value>
+      <value>//input[@value='Save Series Information']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
-      <value>//tr[@id='test_row_2']/td[3]</value>
+      <value>//form[@id='seriesinfoform']/fieldset/table/tbody/tr[9]/td/input[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Gen 1:1'])[1]/following::td[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Upload Series Audio Image'])[1]/following::input[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Study'])[1]/following::td[4]</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='New Speaker'])[3]/preceding::td[2]</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Sun'])[1]/preceding::td[4]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Description'])[1]/following::input[4]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
-      <value>//div[3]/table/tbody/tr/td/table/tbody/tr/td[3]</value>
+      <value>//tr[9]/td/input[2]</value>
    </webElementXpaths>
 </WebElementEntity>

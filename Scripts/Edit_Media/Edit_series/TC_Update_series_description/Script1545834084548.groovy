@@ -12,40 +12,40 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import groovy.time.TimeCategory
-import java.text.DateFormat
-import java.util.Date
+import org.openqa.selenium.Keys as Keys
 
-//This test case check that the editing of date field.
-//Edit the media that is on the top.
+
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
+
+WebUI.switchToWindowTitle('CCCH - Media Center Administration')
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+cseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'), 'value')
+println(cseries)
+
+if (cseries==102)
+{
+	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'),'122', false)
+}
+
+else
+{
+	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'),'102', false)
+}
+WebUI.clearText(findTestObject('Edit_Media/Edit_series_fields/series_description'))
+WebUI.setText(findTestObject('Edit_Media/Edit_series_fields/series_description'), series_desc)
+WebUI.click(findTestObject('Edit_Media/Edit_series_fields/Save_series_button'))
+WebUI.delay(5)
+WebUI.verifyTextPresent('Series Information Updated.', true, FailureHandling.STOP_ON_FAILURE)
+
+WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series'), 10)
+
 WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
 
-//Get the current month and update the different month
-month = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Month'), 'value')
-if (month=='12')
-{
-	WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/Month'),'10')
-}
-else
-{
-	WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/Month'),'12')
-}
-//Get updated month,day and year and create a date and then submit the form.
-umonth = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Month'), 'value')
-day = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Day'), 'value')
-year = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Year'), 'value')
-date=WebUI.concatenate(umonth,'/',day,'/',year)
-println(date)
-WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
+useries_desc=WebUI.getText(findTestObject('Edit_Media/Edit_series_fields/series_description'))
 
-//Get the date on the listing page and compare it with previous date.
-udate = WebUI.getText(findTestObject('Edit_Media/date'))
-
-println(udate)
 //Assertion
-WebUI.verifyMatch(udate,date, false)
-
+WebUI.verifyMatch(useries_desc, series_desc, false)
 

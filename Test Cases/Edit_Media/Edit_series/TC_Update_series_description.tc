@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case will check for updated series.</description>
+   <name>TC_Update_series_description</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8efd0826-44aa-46c7-889c-830577a257f0</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>e1b3cfaa-f9dd-47d0-b9b7-d14ae6b9a57e</id>
+      <masked>false</masked>
+      <name>series_desc</name>
+   </variable>
+</TestCaseEntity>

@@ -3,7 +3,7 @@
    <description></description>
    <name>input_Login_access_login</name>
    <tag></tag>
-   <elementGuidId>1e92609f-9d74-4406-9938-baa9a97aca50</elementGuidId>
+   <elementGuidId>a0e2287f-6e1b-4e4f-b578-cec0a6f3ca39</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
@@ -83,12 +83,6 @@
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Password:'])[1]/preceding::input[1]</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:neighbor</name>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('id(', '&quot;', 'access_login', '&quot;', ')')])[1]/preceding::input[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>

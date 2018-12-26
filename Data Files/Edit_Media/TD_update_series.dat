@@ -5,40 +5,14 @@
    <tag></tag>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
-   <dataFileGUID>3e1bcda4-5138-4ae6-9e9f-4839a67d5141</dataFileGUID>
+   <dataFileGUID>a5f4f906-de55-4110-847e-17c672c19674</dataFileGUID>
    <dataSourceUrl></dataSourceUrl>
    <driver>InternalData</driver>
-   <data>My+Series New+Speaker New+Title+Update My+New+description Pray%2CRepentance%2CRevival vimeo.com</data>
-   <data>null null null null null null</data>
+   <data>This+is+my+new+series+description</data>
    <internalDataColumns>
       <columnIndex>0</columnIndex>
-      <name>Series textName</name>
-      <size>2</size>
-   </internalDataColumns>
-   <internalDataColumns>
-      <columnIndex>1</columnIndex>
-      <name>SpeakerName</name>
-      <size>2</size>
-   </internalDataColumns>
-   <internalDataColumns>
-      <columnIndex>2</columnIndex>
-      <name>TitleName</name>
-      <size>2</size>
-   </internalDataColumns>
-   <internalDataColumns>
-      <columnIndex>3</columnIndex>
-      <name>DescptionText</name>
-      <size>2</size>
-   </internalDataColumns>
-   <internalDataColumns>
-      <columnIndex>4</columnIndex>
-      <name>KeywordsText</name>
-      <size>2</size>
-   </internalDataColumns>
-   <internalDataColumns>
-      <columnIndex>5</columnIndex>
-      <name>VimeoUrl</name>
-      <size>2</size>
+      <name>Series Description</name>
+      <size>1</size>
    </internalDataColumns>
    <isInternalPath>false</isInternalPath>
    <query></query>

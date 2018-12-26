@@ -55,7 +55,7 @@
    <testCaseLink>
       <guid>b0fcad20-3661-4f0a-96df-79de14b99009</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_date</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
@@ -88,7 +88,7 @@
             <iterationType>ALL</iterationType>
             <value></value>
          </iterationEntity>
-         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+         <testDataId>Data Files/Edit_Media/TD_update_audio</testDataId>
       </testDataLink>
       <variableLink>
          <testDataLinkId></testDataLinkId>
@@ -121,7 +121,7 @@
             <iterationType>ALL</iterationType>
             <value></value>
          </iterationEntity>
-         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+         <testDataId>Data Files/Edit_Media/TD_update_audio</testDataId>
       </testDataLink>
       <variableLink>
          <testDataLinkId></testDataLinkId>
@@ -154,7 +154,7 @@
             <iterationType>ALL</iterationType>
             <value></value>
          </iterationEntity>
-         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+         <testDataId>Data Files/Edit_Media/TD_update_audio</testDataId>
       </testDataLink>
       <variableLink>
          <testDataLinkId></testDataLinkId>
@@ -187,7 +187,7 @@
             <iterationType>ALL</iterationType>
             <value></value>
          </iterationEntity>
-         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+         <testDataId>Data Files/Edit_Media/TD_update_audio</testDataId>
       </testDataLink>
    </testCaseLink>
    <testCaseLink>
@@ -202,7 +202,7 @@
             <iterationType>ALL</iterationType>
             <value></value>
          </iterationEntity>
-         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+         <testDataId>Data Files/Edit_Media/TD_update_audio</testDataId>
       </testDataLink>
       <variableLink>
          <testDataLinkId>4123eec1-1910-4f18-9c23-96a80f44f69b</testDataLinkId>
@@ -223,7 +223,7 @@
             <iterationType>ALL</iterationType>
             <value></value>
          </iterationEntity>
-         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+         <testDataId>Data Files/Edit_Media/TD_update_audio</testDataId>
       </testDataLink>
       <variableLink>
          <testDataLinkId>b9d8c7d7-21cc-4b0c-ae1f-b1e67dced26a</testDataLinkId>
@@ -244,7 +244,7 @@
             <iterationType>ALL</iterationType>
             <value></value>
          </iterationEntity>
-         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+         <testDataId>Data Files/Edit_Media/TD_update_audio</testDataId>
       </testDataLink>
       <variableLink>
          <testDataLinkId>ff353035-395b-450a-9fcb-f3c6f1a99d48</testDataLinkId>
@@ -258,5 +258,26 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Upload_audio_file</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ac08caa7-6393-4b03-9b6c-f7a495387874</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_youtube_url</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>0f3f3981-1633-47c2-82c4-0f3fbcce9fd2</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Edit_Media/TD_update_audio</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>0f3f3981-1633-47c2-82c4-0f3fbcce9fd2</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>youtubeUrl</value>
+         <variableId>df96e16e-9b39-4bd7-a598-b9bc2534502f</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

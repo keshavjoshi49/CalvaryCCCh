@@ -37,7 +37,7 @@
    <testCaseLink>
       <guid>cc7be0ae-eb13-4240-8fb4-492cbc4b2b9a</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Update_series_series</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
@@ -56,6 +56,27 @@
          <type>DEFAULT</type>
          <value></value>
          <variableId>6eec12f3-8c08-46d6-b39c-8425d9e1a00f</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>20137963-cb81-459f-a443-3ae356298298</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Update_series_description</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>11fee659-2099-46dc-96bf-24b18b14b3c8</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>11fee659-2099-46dc-96bf-24b18b14b3c8</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>Series Description</value>
+         <variableId>e1b3cfaa-f9dd-47d0-b9b7-d14ae6b9a57e</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

@@ -24,26 +24,16 @@ println(cseries)
 
 if (cseries==102)
 {
-	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/series_drop_down'),'122', false)
+	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'),'122', false)
 }
 
 else
 {
-	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/series_drop_down'),'102', false)
+	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'),'102', false)
 }
 
+WebUI.click(findTestObject('Edit_Media/Edit_series_fields/Save_series_button'))
+WebUI.delay(5)
+//WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_series_fields/save_series_text_message'), 10)
+WebUI.verifyTextPresent('Series Information Updated.', true, FailureHandling.STOP_ON_FAILURE)
 
-//+++++++++++++++++++++++++++
-//WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/series_drop_down'),'zzznew', false)
-//WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'), 10)
-//WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'),seriesText)
-//
-//cseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'), 'value')
-//println (cseries)
-//
-//WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-//WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series'), 10)
-//
-//
-//WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/series'), cseries)
-//println("pass")

@@ -12,40 +12,30 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import groovy.time.TimeCategory
-import java.text.DateFormat
-import java.util.Date
+import org.openqa.selenium.Keys as Keys
 
-//This test case check that the editing of date field.
+//This test case check that the editing of audio Youtube url field.
 //Edit the media that is on the top.
+
 WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
 
-//Get the current month and update the different month
-month = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Month'), 'value')
-if (month=='12')
-{
-	WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/Month'),'10')
-}
-else
-{
-	WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/Month'),'12')
-}
-//Get updated month,day and year and create a date and then submit the form.
-umonth = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Month'), 'value')
-day = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Day'), 'value')
-year = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Year'), 'value')
-date=WebUI.concatenate(umonth,'/',day,'/',year)
-println(date)
+//Select vimeo check box and add a new vimeo url and save the form.
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/youtube_radio_button'))
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/youtube_clear_button'))
+WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/youtube_input_field'), youtubeUrl)
+//println(vimeoUrl)
 WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/title'), 10)
 
-//Get the date on the listing page and compare it with previous date.
-udate = WebUI.getText(findTestObject('Edit_Media/date'))
+//Open the same first media again and compare the vimeo url 
+WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
+WebUI.switchToWindowTitle('CCCH - Media Center Administration')
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
+uyoutube=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/youtube_input_field'), 'value')
+println(uyoutube)
 
-println(udate)
 //Assertion
-WebUI.verifyMatch(udate,date, false)
-
-
+WebUI.verifyMatch(youtubeUrl, uyoutube, false)
+println("pass")

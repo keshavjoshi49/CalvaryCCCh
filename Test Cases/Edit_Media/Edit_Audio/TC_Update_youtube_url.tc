@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case will check for updated speaker</description>
+   <name>TC_Update_youtube_url</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a07522e6-1f59-44ef-87e9-e8218776caf6</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>df96e16e-9b39-4bd7-a598-b9bc2534502f</id>
+      <masked>false</masked>
+      <name>youtubeUrl</name>
+   </variable>
+</TestCaseEntity>

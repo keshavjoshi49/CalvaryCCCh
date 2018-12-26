@@ -38,6 +38,7 @@ if (b=='Delete')
 	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_close_button'))
 	println("link present")
 
+        
 }
 //If audio is not uploaded then upload a new file.
 else
