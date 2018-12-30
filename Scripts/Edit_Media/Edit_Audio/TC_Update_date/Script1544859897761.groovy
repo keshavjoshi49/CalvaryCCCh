@@ -17,16 +17,22 @@ import java.text.DateFormat
 import java.util.Date
 
 //This test case check that the editing of date field.
-//Edit the media that is on the top.
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+
+
+CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+
+//Pass username and passwords
+CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Get the current month and update the different month
 month = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Month'), 'value')
 if (month=='12')
 {
 	WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/Month'),'10')
+	
 }
 else
 {
@@ -38,8 +44,9 @@ day = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Day'), 'va
 year = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/Year'), 'value')
 date=WebUI.concatenate(umonth,'/',day,'/',year)
 println(date)
-WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
+//Submit the form
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+
 
 //Get the date on the listing page and compare it with previous date.
 udate = WebUI.getText(findTestObject('Edit_Media/date'))

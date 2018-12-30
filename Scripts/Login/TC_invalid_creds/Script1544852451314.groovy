@@ -13,14 +13,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('')
-WebUI.navigateToUrl(url)
+//Launch application
+CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 
-//Pass different username or password
-WebUI.setText(findTestObject('Login/username'), username)
-WebUI.setText(findTestObject('Login/password'),password)
-
-WebUI.click(findTestObject('Login/input'))
+//Pass different username and passwords
+CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Assertion
 WebUI.verifyTextPresent('Invalid username or password', true, FailureHandling.STOP_ON_FAILURE)

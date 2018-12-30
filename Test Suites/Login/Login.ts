@@ -53,9 +53,87 @@
       </variableLink>
    </testCaseLink>
    <testCaseLink>
-      <guid>79d7e372-0dbe-44b0-9f78-7df4fdd3b373</guid>
+      <guid>a1478dcd-da17-41ac-9a62-6f85b68b9346</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Login/TC_invalid_creds</testCaseId>
+      <testDataLink>
+         <combinationType>MANY</combinationType>
+         <id>78bbfa2f-2239-4239-8c7e-6a81c0a069f5</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/URL/url</testDataId>
+      </testDataLink>
+      <testDataLink>
+         <combinationType>MANY</combinationType>
+         <id>a3a204f1-0820-49c4-ba0c-8fb7c8bcb029</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Login/TD_invalid_creds</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>78bbfa2f-2239-4239-8c7e-6a81c0a069f5</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>url</value>
+         <variableId>a031a349-e126-4048-ac42-edb2c885c7b9</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>a3a204f1-0820-49c4-ba0c-8fb7c8bcb029</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>username</value>
+         <variableId>1da9f9bb-030d-46ca-a162-863543234245</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>a3a204f1-0820-49c4-ba0c-8fb7c8bcb029</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>password</value>
+         <variableId>a5f3af76-b786-4e5b-9354-9824c7d4d927</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a9890af1-e23b-4bed-afc8-ae5c84c7cf0e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Login/TC_log_out</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>67580acf-0038-4fc1-b920-f9ffff9d92ee</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/URL/url</testDataId>
+      </testDataLink>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>ba8bd873-3e58-4022-a7e2-8a6356fb2b68</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Login/TD_valid_creds</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>67580acf-0038-4fc1-b920-f9ffff9d92ee</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>url</value>
+         <variableId>63af33a0-c30a-4519-88fd-dea3c41438d4</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>ba8bd873-3e58-4022-a7e2-8a6356fb2b68</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>username</value>
+         <variableId>41c6d54e-1ebe-4206-9c61-3c8c9e402ce7</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>ba8bd873-3e58-4022-a7e2-8a6356fb2b68</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>password</value>
+         <variableId>5f5b9397-f1e9-407f-91f4-d5197fc75ef0</variableId>
+      </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

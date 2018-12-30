@@ -10,14 +10,21 @@
       <description></description>
       <id>d6a5b16c-7bac-479f-9b08-9b247b4826d0</id>
       <masked>false</masked>
-      <name>ctitle</name>
+      <name>url</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
       <id>415e3dd7-ce1f-4e73-8935-7b53ea5e6218</id>
       <masked>false</masked>
-      <name>useries</name>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>22e88b4f-a739-4fb3-802f-85496d3e27df</id>
+      <masked>false</masked>
+      <name>password</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>

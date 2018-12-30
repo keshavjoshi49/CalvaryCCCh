@@ -12,4 +12,25 @@
       <masked>false</masked>
       <name>youtubeUrl</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>7abd5254-7cd2-47f9-bc26-85efd82a6084</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>de349724-49b1-4d77-a994-4a511d4515fc</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>280c8cc3-2242-4690-80f3-cfb7548b2bb7</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
 </TestCaseEntity>

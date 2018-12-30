@@ -37,7 +37,7 @@
    <testCaseLink>
       <guid>cc7be0ae-eb13-4240-8fb4-492cbc4b2b9a</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Update_series_series</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
@@ -77,6 +77,48 @@
          <type>DATA_COLUMN</type>
          <value>Series Description</value>
          <variableId>e1b3cfaa-f9dd-47d0-b9b7-d14ae6b9a57e</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c2df4724-1ddf-483c-b4f6-4b08d5c8eeeb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Upload_series_image</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>9f0eb72d-c4a4-4a2c-bd9c-1ad8cbfdd53a</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>9f0eb72d-c4a4-4a2c-bd9c-1ad8cbfdd53a</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>ImagePath</value>
+         <variableId>9c469bf6-94ac-4a0c-9725-32a5ded30999</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8fd3934f-2244-43c2-bf93-24c57371bedb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Update_series_delete_image</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>b1702326-d2b7-4c12-aa61-1fd59ce86e1a</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>b1702326-d2b7-4c12-aa61-1fd59ce86e1a</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>ImagePath</value>
+         <variableId>430f3e85-0392-4047-863a-ebd796a43395</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>

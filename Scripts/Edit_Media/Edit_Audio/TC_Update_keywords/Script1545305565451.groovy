@@ -15,28 +15,29 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 //This test case check that the editing of audio description field.
-//Edit the media that is on the top.
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
+CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+
+//Pass username and passwords
+CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Clear the Keyword field and add a new text and save it into varaible and then save the form.
 WebUI.clearText(findTestObject('Edit_Media/Edit_audio_fields/keywords'))
 WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/keywords'),keywords)
 ckeywords=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/keywords'), 'value')
-println (ckeywords)
-WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/title'), 10)
 
-//Open the same first media again and compare Keyword value.
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
+//Submit the form
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 ukeywords=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/keywords'), 'value')
 //Assertion
 WebUI.verifyMatch(ckeywords, ukeywords, false)
-println("pass")
+
 
 
 

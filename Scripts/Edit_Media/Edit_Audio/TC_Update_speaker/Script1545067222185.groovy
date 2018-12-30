@@ -15,20 +15,23 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 //This test case check that the editing of audio speaker field.
-//Edit the media that is on the top.
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+
+//Pass username and passwords
+CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Add new speaker and save the speaker name and save the form.
 WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/speaker_drop_down'),'zzznew', false)
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/speaker_input_field'), 10)
 WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/speaker_input_field'),speakerText)
 cspeaker=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/speaker_input_field'),'value')
-println (cspeaker)
-WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/speaker'), 10)
 
+
+//Submit the form
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 //Assertion
 WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/speaker'), cspeaker)
-println("pass")
+

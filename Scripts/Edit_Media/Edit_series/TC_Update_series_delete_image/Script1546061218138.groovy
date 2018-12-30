@@ -12,31 +12,43 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+
+import org.junit.After
 import org.openqa.selenium.Keys as Keys
 
 
+//This test case check that the uploading a series image.
+//Edit the media that is on the top.
 WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
-cseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'), 'value')
-println(cseries)
 
-if (cseries==102)
+boolean delete;
+try
 {
-	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'),'122', false)
+	WebUI.verifyElementPresent(findTestObject('Edit_Media/Edit_series_fields/uploaded_series_image'), 10)
+	delete=true;
+}
+catch(Exception ex)
+{
+	delete=false;
 }
 
- 
+println(delete)
 
-
-
+if (delete)
+{
+	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
+	WebUI.acceptAlert()
+}
 else
 {
-	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'),'102', false)
+	WebUI.uploadFile(findTestObject('Edit_Media/Edit_series_fields/upload_series_image'), imagePath)
+	WebUI.delay(5)
+	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
+	WebUI.acceptAlert()
 }
-WebUI.clearText(findTestObject('Edit_Media/Edit_series_fields/series_description'))
-WebUI.setText(findTestObject('Edit_Media/Edit_series_fields/series_description'), series_desc)
+
 WebUI.click(findTestObject('Edit_Media/Edit_series_fields/Save_series_button'))
 WebUI.delay(5)
 WebUI.verifyTextPresent('Series Information Updated.', true, FailureHandling.STOP_ON_FAILURE)
@@ -48,8 +60,6 @@ WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
 
-useries_desc=WebUI.getText(findTestObject('Edit_Media/Edit_series_fields/series_description'))
-
 //Assertion
-WebUI.verifyMatch(useries_desc, series_desc, false)
+WebUI.verifyElementNotPresent(findTestObject('Edit_Media/Edit_series_fields/uploaded_series_image'), 10)
 

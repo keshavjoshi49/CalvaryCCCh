@@ -15,27 +15,26 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 //This test case check that the editing of audio Vimeo url field.
-//Edit the media that is on the top.
+CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
+//Pass username and passwords
+CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Select vimeo check box and add a new vimeo url and save the form.
 WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/vimeo_radio_button'))
 WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/vimeo_clear_button'))
 WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/vimeo_input_field'), vimeoUrl)
-println(vimeoUrl)
-WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/title'), 10)
+//Submit the form
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 
-//Open the same first media again and compare the vimeo url 
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+
 uvimeo=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/vimeo_input_field'), 'value')
-println(uvimeo)
 
 //Assertion
 WebUI.verifyMatch(vimeoUrl, uvimeo, false)
-println("pass")
+

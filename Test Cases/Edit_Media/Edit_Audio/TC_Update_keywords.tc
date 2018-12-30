@@ -12,4 +12,25 @@
       <masked>false</masked>
       <name>keywords</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f351384d-57e4-4062-aa78-314fe5bdd69f</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>3accf50b-d0d6-4473-b287-45aa6ded01f4</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>97f27d4e-24d0-4b63-8953-440ca4f642bf</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
 </TestCaseEntity>

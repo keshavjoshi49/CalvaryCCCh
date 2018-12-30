@@ -10,20 +10,20 @@
       <description></description>
       <id>ef242e01-95fe-491a-ad8c-7b2cec1e6084</id>
       <masked>false</masked>
-      <name>cdate</name>
+      <name>url</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
       <id>1cf6fa5a-783d-4f6e-b4a3-2d3c2a586692</id>
       <masked>false</masked>
-      <name>udate</name>
+      <name>username</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
       <id>cf40ac9c-fa3c-4a1f-a16f-56b2cad960f9</id>
       <masked>false</masked>
-      <name>a</name>
+      <name>password</name>
    </variable>
 </TestCaseEntity>

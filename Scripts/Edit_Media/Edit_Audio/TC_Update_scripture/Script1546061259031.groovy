@@ -12,10 +12,8 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
 
-//This test case check that the editing of audio description field.
-
+//This test case check that the editing of scripture field.
 CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 
 //Pass username and passwords
@@ -25,10 +23,20 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 
-//Clear the description field and add a new text and save it into varaible and then save the form.
-WebUI.clearText(findTestObject('Edit_Media/Edit_audio_fields/description'))
-WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/description'),descriptionText)
-cdescription=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/description'), 'value')
+//Get the current scripture and update the different scripture
+cscripture = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
+println (cscripture)
+if (cscripture=='1')
+{
+	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/book'),'2', false)
+}
+else
+{
+	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/book'),'1', false)
+}
+
+//Get the updated scripture value and submit the form
+uscripture = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
 
 //Submit the form
 CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
@@ -36,8 +44,7 @@ CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
-udescription=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/description'), 'value')
+uscripture1 = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
+
 //Assertion
-WebUI.verifyMatch(cdescription, udescription, false)
-
-
+WebUI.verifyMatch(uscripture, uscripture1, false)

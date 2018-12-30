@@ -8,10 +8,15 @@
    <dataFileGUID>a5f4f906-de55-4110-847e-17c672c19674</dataFileGUID>
    <dataSourceUrl></dataSourceUrl>
    <driver>InternalData</driver>
-   <data>This+is+my+new+series+description</data>
+   <data>This+is+my+new+series+description C%3A%5C%5CUsers%5C%5CNITISH%5C%5CDesktop%5C%5Cdummy%5C%5Cbig.jpg</data>
    <internalDataColumns>
       <columnIndex>0</columnIndex>
       <name>Series Description</name>
+      <size>1</size>
+   </internalDataColumns>
+   <internalDataColumns>
+      <columnIndex>1</columnIndex>
+      <name>ImagePath</name>
       <size>1</size>
    </internalDataColumns>
    <isInternalPath>false</isInternalPath>

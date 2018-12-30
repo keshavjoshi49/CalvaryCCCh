@@ -18,8 +18,10 @@ import java.util.Date
 import java.text.SimpleDateFormat;
 
 
-string d ='12/09/2018'
-
-Date ud = new SimpleDateFormat("MM/dd/yyyy").parse(d)
-
-println(ud)
+//string d ='12/09/2018'
+//
+//Date ud = new SimpleDateFormat("MM/dd/yyyy").parse(d)
+//
+//println(ud)
+CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'('https://dev61.calvarycch.org/content/admin_login.php')
+CustomKeywords.'calvaryCCH.controls.controls.setText'('Login/username', 'asdf')

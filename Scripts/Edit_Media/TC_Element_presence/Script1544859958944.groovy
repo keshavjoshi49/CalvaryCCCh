@@ -15,14 +15,17 @@ import internal.GlobalVariable as GlobalVariable
 
 //This test case check that all the buttons and fields are present in the edit mode.
 
+//Launch application
+CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 
-//WebUI.waitForElementPresent(findTestObject('Login/logout'))
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
+//Pass username and passwords
+CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+
+//Assertions
 WebUI.verifyTextPresent('Media Center Administration', true, FailureHandling.STOP_ON_FAILURE)
-
 //Vereify the presence of all the buttons on the page
 //1. Disable button
 WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 0, FailureHandling.STOP_ON_FAILURE)

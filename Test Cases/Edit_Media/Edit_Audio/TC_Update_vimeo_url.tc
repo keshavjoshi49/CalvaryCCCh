@@ -12,4 +12,25 @@
       <masked>false</masked>
       <name>vimeoUrl</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ef68b229-2d6f-44ab-ae97-4d81a13cd3d5</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d321a97f-4e35-4330-ace9-73e49670af46</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>63a797ca-4734-4281-a761-4054f63abe06</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
 </TestCaseEntity>

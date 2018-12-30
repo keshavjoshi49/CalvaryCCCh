@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description>This test case will check for updated series.</description>
-   <name>TC_Update_series</name>
+   <description>This test case is checking the scripture drop down update</description>
+   <name>TC_Update_scripture</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>bfd6568d-552d-4cfd-a52a-953866daac78</testCaseGuid>
+   <testCaseGuid>c23504a3-fb84-4e20-b217-a233b828a1e3</testCaseGuid>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>cd5d110e-0874-413e-b230-7d407d4c2075</id>
+      <id>b34cbc3e-e572-4d9a-b9df-833c7fdd0a6c</id>
       <masked>false</masked>
       <name>url</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>060eea4c-1175-49d8-98f3-7fdbc9e17291</id>
+      <id>64a84a9a-e498-4253-b271-e0d274f0d738</id>
       <masked>false</masked>
       <name>username</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>3d3465f5-3c83-4197-946b-587b6ea2d232</id>
+      <id>33e87cc7-47b9-4daf-878e-6c689eea287e</id>
       <masked>false</masked>
       <name>password</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>aea9e073-bd8a-4f79-852e-d8dce87711ac</id>
-      <masked>false</masked>
-      <name>seriesText</name>
    </variable>
 </TestCaseEntity>

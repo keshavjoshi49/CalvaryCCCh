@@ -12,37 +12,53 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
-//This test case check that the editing of scripture field.
+
+//This test case check that the uploading a series image.
 //Edit the media that is on the top.
 WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
 
-//Get the current scripture and update the different scripture
-cscripture = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
-println (cscripture)
-if (cscripture=='1')
+boolean delete;
+try
 {
-	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/book'),'2', false)
+	WebUI.verifyElementPresent(findTestObject('Edit_Media/Edit_series_fields/uploaded_series_image'), 10)
+	delete=true;
 }
+catch(Exception ex)
+{
+	delete=false;
+}
+
+if(delete)
+{
+	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
+	WebUI.acceptAlert()
+	WebUI.uploadFile(findTestObject('Edit_Media/Edit_series_fields/upload_series_image'), imagePath)
+	WebUI.delay(5)
+}
+
 else
 {
-	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/book'),'1', false)
+	WebUI.uploadFile(findTestObject('Edit_Media/Edit_series_fields/upload_series_image'), imagePath)
+	WebUI.delay(5)
 }
 
-//Get the updated scripture value and submit the form
-uscripture = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
-println (uscripture)
-WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/speaker'), 10)
 
-//Open the same first media again and check compare scripture value.
+WebUI.click(findTestObject('Edit_Media/Edit_series_fields/Save_series_button'))
+WebUI.delay(10)
+WebUI.verifyTextPresent('Series Information Updated.', true, FailureHandling.STOP_ON_FAILURE)
+
+WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series'), 10)
+
 WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
 WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 40)
-uscripture1 = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+
 
 //Assertion
-WebUI.verifyMatch(uscripture, uscripture1, false)
-println("pass")
+WebUI.verifyElementPresent(findTestObject('Edit_Media/Edit_series_fields/uploaded_series_image'), 10)
+

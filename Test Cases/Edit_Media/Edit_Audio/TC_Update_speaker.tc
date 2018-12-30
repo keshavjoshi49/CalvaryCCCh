@@ -10,14 +10,21 @@
       <description></description>
       <id>f759f586-1d89-4c9e-bf8a-6a6fc66c2350</id>
       <masked>false</masked>
-      <name>cspeaker</name>
+      <name>url</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
       <id>0c9bc7aa-fa0b-4bc9-9679-80146240d4bf</id>
       <masked>false</masked>
-      <name>useries</name>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>84c27016-a975-4595-939e-cf3da2af9555</id>
+      <masked>false</masked>
+      <name>password</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>

@@ -36,4 +36,6 @@ WebUI.click(findTestObject('Edit_Media/Edit_series_fields/Save_series_button'))
 WebUI.delay(5)
 //WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_series_fields/save_series_text_message'), 10)
 WebUI.verifyTextPresent('Series Information Updated.', true, FailureHandling.STOP_ON_FAILURE)
+WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
+WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series'), 10)
 
