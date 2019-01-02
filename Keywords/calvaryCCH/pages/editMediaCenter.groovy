@@ -18,11 +18,16 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
 
-public class editMediaCenter 
-{
+public class editMediaCenter {
 	@Keyword
 	def submitForm() {
-	WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-	WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
+		WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
+		WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
+	}
+	
+	@Keyword
+	def cancelForm() {
+		WebUI.click(findTestObject('Edit_Media/Buttons/cancel_button'))
+		WebUI.acceptAlert()
 	}
 }

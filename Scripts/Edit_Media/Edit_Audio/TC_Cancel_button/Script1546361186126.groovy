@@ -14,6 +14,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+//This test case check that the editing of audio description field.
 
 CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 
@@ -23,9 +24,11 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
-WebUI.click(findTestObject('Edit_Media/Buttons/delete_button'))
-WebUI.acceptAlert()
-WebUI.waitForPageLoad(5);
 
-WebUI.verifyElementNotPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
-WebUI.verifyTextPresent('Media Center Administration', true, FailureHandling.STOP_ON_FAILURE)
+//Click on Cancel button and press accept the windows alert.
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.cancelForm'()
+
+//Assertion
+WebUI.verifyElementPresent(findTestObject('Edit_Media/date'), 10)
+
+

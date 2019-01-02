@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case will check for updated speaker</description>
+   <name>TC_Delete_button - INP</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c0ff21c1-e7a6-4137-8a1b-0beee20205a6</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>fc45fb92-c0ef-4903-9121-0f886ae5d359</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>70359f25-ef59-4c0c-b39a-2c2df184f410</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>5234a3df-ba9c-441c-baaa-45c9e499d9a8</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>

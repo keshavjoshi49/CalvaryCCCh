@@ -10,7 +10,7 @@
       <description></description>
       <id>bbfdbba3-222f-4040-903a-8f30416ce5a4</id>
       <masked>false</masked>
-      <name>cseries</name>
+      <name>url</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
@@ -18,6 +18,13 @@
       <id>f8547d32-9432-408b-8be9-968924df3582</id>
       <masked>false</masked>
       <name>useries</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f96e229d-fee1-4073-8f3d-27239bea9d31</id>
+      <masked>false</masked>
+      <name>password</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>

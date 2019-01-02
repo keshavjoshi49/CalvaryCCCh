@@ -106,7 +106,7 @@
    <testCaseLink>
       <guid>694e8328-263c-4cc3-ae05-8c432f1d763e</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_series</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -626,6 +626,72 @@
          <type>DATA_COLUMN</type>
          <value>password</value>
          <variableId>29ebe9fc-8b19-439e-96fa-be5b0a5bec68</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>95f3451e-1f6d-4cfb-9292-729b09a92eff</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Cancel_button</testCaseId>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>0f6a6f68-6cb7-44c6-a5e1-bb770c29dab6</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Login/TD_valid_creds</testDataId>
+      </testDataLink>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>5279eb46-001a-4cfe-a322-876647abad2f</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/URL/url</testDataId>
+      </testDataLink>
+      <variableLink>
+         <testDataLinkId>5279eb46-001a-4cfe-a322-876647abad2f</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>url</value>
+         <variableId>17f6e46b-fe90-4db9-add2-0b18841fbb54</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>0f6a6f68-6cb7-44c6-a5e1-bb770c29dab6</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>username</value>
+         <variableId>b4836df6-3d4e-4c33-9eae-34544fed0bc0</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>0f6a6f68-6cb7-44c6-a5e1-bb770c29dab6</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>password</value>
+         <variableId>80bc50a3-1348-4b30-a3bf-882962fb9d36</variableId>
+      </variableLink>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>cec5ff34-f7fb-428a-b91d-8133ed14fa74</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Delete_button - INP</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>fc45fb92-c0ef-4903-9121-0f886ae5d359</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>70359f25-ef59-4c0c-b39a-2c2df184f410</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>5234a3df-ba9c-441c-baaa-45c9e499d9a8</variableId>
       </variableLink>
    </testCaseLink>
 </TestSuiteEntity>
