@@ -30,4 +30,10 @@ public class editMediaCenter {
 		WebUI.click(findTestObject('Edit_Media/Buttons/cancel_button'))
 		WebUI.acceptAlert()
 	}
+	@Keyword
+	def deleteForm() {
+		WebUI.click(findTestObject('Edit_Media/Buttons/delete_button'))
+		WebUI.acceptAlert()
+		WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
+	}
 }
