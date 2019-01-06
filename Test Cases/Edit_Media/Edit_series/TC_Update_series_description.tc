@@ -12,4 +12,25 @@
       <masked>false</masked>
       <name>series_desc</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>ff9a9900-2892-45fe-8ad4-3c1da9bb0f60</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>88db3584-e2e1-4128-9e0c-5c89e22aa04d</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>efe27560-6caa-4d30-8dcc-09b057d909d8</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
 </TestCaseEntity>

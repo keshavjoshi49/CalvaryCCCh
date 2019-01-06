@@ -24,7 +24,7 @@ public class editMediaCenter {
 		WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
 		WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
 	}
-	
+
 	@Keyword
 	def cancelForm() {
 		WebUI.click(findTestObject('Edit_Media/Buttons/cancel_button'))
@@ -35,5 +35,23 @@ public class editMediaCenter {
 		WebUI.click(findTestObject('Edit_Media/Buttons/delete_button'))
 		WebUI.acceptAlert()
 		WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
+	}
+	@Keyword
+	def disableForm() {
+		WebUI.click(findTestObject('Edit_Media/Buttons/disable_button'))
+		WebUI.acceptAlert()
+		WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
+	}
+	@Keyword
+	def enableForm() {
+		WebUI.click(findTestObject('Edit_Media/Buttons/enable_button'))
+		WebUI.acceptAlert()
+		WebUI.waitForElementPresent(findTestObject('Edit_Media/date'), 10)
+	}
+	@Keyword
+	def saveSeries() {
+		WebUI.click(findTestObject('Edit_Media/Edit_series_fields/Save_series_button'))
+		WebUI.delay(5)
+		WebUI.verifyTextPresent('Series Information Updated.', true, FailureHandling.STOP_ON_FAILURE)
 	}
 }

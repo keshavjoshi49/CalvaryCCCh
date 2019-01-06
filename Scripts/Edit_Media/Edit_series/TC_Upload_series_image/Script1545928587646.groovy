@@ -16,11 +16,15 @@ import org.openqa.selenium.Keys as Keys
 
 
 //This test case check that the uploading a series image.
-//Edit the media that is on the top.
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 
+//Pass username and passwords
+CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+
+//check if delete button is present
 boolean delete;
 try
 {
@@ -32,6 +36,7 @@ catch(Exception ex)
 	delete=false;
 }
 
+//If already image present then delete and upload it again
 if(delete)
 {
 	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
@@ -46,17 +51,13 @@ else
 	WebUI.delay(5)
 }
 
+//Save the series 
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
+//submit the form
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 
-WebUI.click(findTestObject('Edit_Media/Edit_series_fields/Save_series_button'))
-WebUI.delay(10)
-WebUI.verifyTextPresent('Series Information Updated.', true, FailureHandling.STOP_ON_FAILURE)
-
-WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series'), 10)
-
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 
 //Assertion

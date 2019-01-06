@@ -20,13 +20,15 @@ import internal.GlobalVariable
 
 public class controls {
 	@Keyword
-	def setText(String object,String value)
-	{
+	def setText(String object,String value) {
 		WebUI.setText(findTestObject(object),value)
 	}
 	@Keyword
-	def click(String object)
-	{
+	def click(String object) {
 		WebUI.click(findTestObject(object))
+	}
+	@Keyword
+	def selectValueInDropDown(String object,String value) {
+		WebUI.selectOptionByValue(findTestObject(object),value, false)
 	}
 }

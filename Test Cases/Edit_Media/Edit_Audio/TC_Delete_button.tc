@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description>This test case will check for updated speaker</description>
-   <name>TC_Upload_audio_file</name>
+   <name>TC_Delete_button</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>7d62219e-acd2-46a2-842a-772b079925cc</testCaseGuid>
+   <testCaseGuid>c0ff21c1-e7a6-4137-8a1b-0beee20205a6</testCaseGuid>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>40a72a7d-753c-4938-8934-6b540e40512b</id>
+      <id>fc45fb92-c0ef-4903-9121-0f886ae5d359</id>
       <masked>false</masked>
       <name>url</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>19f975c7-f44d-4de8-ace5-b961eb3ac7ac</id>
+      <id>70359f25-ef59-4c0c-b39a-2c2df184f410</id>
       <masked>false</masked>
       <name>username</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>efd9e7bc-25df-4d38-976d-b3d2d681fdbc</id>
+      <id>5234a3df-ba9c-441c-baaa-45c9e499d9a8</id>
       <masked>false</masked>
       <name>password</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
-      <id>4c46c90a-ab72-436e-9cef-d0359e4dc4cc</id>
-      <masked>false</masked>
-      <name>audioPath</name>
    </variable>
 </TestCaseEntity>

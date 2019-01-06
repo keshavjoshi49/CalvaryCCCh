@@ -24,7 +24,8 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 // Add a new series and save the series name and submit the form
-WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/series_drop_down'),'zzznew', false)
+CustomKeywords.'calvaryCCH.controls.controls.selectValueInDropDown'('Edit_Media/Edit_audio_fields/series_drop_down', 'zzznew')
+//WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/series_drop_down'),'zzznew', false)
 WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'), 10)
 WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'),seriesText)
 cseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'), 'value')

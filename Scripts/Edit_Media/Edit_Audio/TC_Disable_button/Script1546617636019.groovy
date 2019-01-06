@@ -12,8 +12,11 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+
+import org.junit.After
 import org.openqa.selenium.Keys as Keys
 
+//This test case check that the editing of audio description field.
 
 CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 
@@ -22,18 +25,30 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+boolean disable
+try {
+		WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+		disable=true;
+	} 
+catch (Exception e) 
+{
+	disable=false;
+}
 
-WebUI.clearText(findTestObject('Edit_Media/Edit_series_fields/series_description'))
-WebUI.setText(findTestObject('Edit_Media/Edit_series_fields/series_description'), series_desc)
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
-
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
-
+if(disable)
+{
+	//Click on disable button
+	CustomKeywords.'calvaryCCH.pages.editMediaCenter.disableForm'()
+}
+else
+{
+	//Click on enable button
+	CustomKeywords.'calvaryCCH.pages.editMediaCenter.enableForm'()
+	CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+	CustomKeywords.'calvaryCCH.pages.editMediaCenter.disableForm'()
+}
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
-
-useries_desc=WebUI.getText(findTestObject('Edit_Media/Edit_series_fields/series_description'))
-
 //Assertion
-WebUI.verifyMatch(useries_desc, series_desc, false)
+WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/enable_button'), 10)
 

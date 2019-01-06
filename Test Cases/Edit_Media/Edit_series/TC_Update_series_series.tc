@@ -15,13 +15,6 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>f8547d32-9432-408b-8be9-968924df3582</id>
-      <masked>false</masked>
-      <name>useries</name>
-   </variable>
-   <variable>
-      <defaultValue>''</defaultValue>
-      <description></description>
       <id>f96e229d-fee1-4073-8f3d-27239bea9d31</id>
       <masked>false</masked>
       <name>password</name>
@@ -29,8 +22,8 @@
    <variable>
       <defaultValue>''</defaultValue>
       <description></description>
-      <id>6eec12f3-8c08-46d6-b39c-8425d9e1a00f</id>
+      <id>4f70a002-fd08-4054-a98c-efc7af84ab61</id>
       <masked>false</masked>
-      <name>seriesText</name>
+      <name>username</name>
    </variable>
 </TestCaseEntity>

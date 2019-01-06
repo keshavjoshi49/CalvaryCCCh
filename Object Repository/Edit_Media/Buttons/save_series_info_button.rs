@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@value='Disable']</value>
+         <value>//input[@value='Save Series Information']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -23,9 +23,29 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
-WebUI.click(findTestObject('Edit_Media/Buttons/delete_button'))
-WebUI.acceptAlert()
-WebUI.waitForPageLoad(5);
+cseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'), 'value')
+if (cseries==102)
+{
+	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'),'122', false)
+}
 
-WebUI.verifyElementNotPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
-WebUI.verifyTextPresent('Media Center Administration', true, FailureHandling.STOP_ON_FAILURE)
+else
+{
+	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'),'102', false)
+}
+useries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'), 'value')
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+eseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'), 'value')
+//Assertion
+WebUI.verifyElementAttributeValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'), useries, eseries, 0, FailureHandling.STOP_ON_FAILURE)
+
+//WebUI.click(findTestObject('Edit_Media/Buttons/delete_button'))
+//WebUI.acceptAlert()
+//WebUI.waitForPageLoad(5);
+//
+//WebUI.verifyElementNotPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+//WebUI.verifyTextPresent('Media Center Administration', true, FailureHandling.STOP_ON_FAILURE)

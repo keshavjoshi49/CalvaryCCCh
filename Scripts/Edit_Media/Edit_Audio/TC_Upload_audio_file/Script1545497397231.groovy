@@ -35,7 +35,7 @@ if (b=='Delete')
 	//WebUI.delay(10)
 	
 	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_button'))
-	WebUI.uploadFile(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_file'), 'C:\\\\Users\\\\NITISH\\Desktop\\\\dummy\\\\Cuppy_Cake_Song.mp3')
+	WebUI.uploadFile(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_file'), audioPath)
 	WebUI.delay(5)
 	WebUI.verifyTextPresent('Upload Complete', true, FailureHandling.STOP_ON_FAILURE)
 	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_close_button'))
@@ -47,7 +47,7 @@ if (b=='Delete')
 else
 {
 	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_button'))
-	WebUI.uploadFile(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_file'), 'C:\\\\Users\\\\NITISH\\Desktop\\\\dummy\\\\Cuppy_Cake_Song.mp3')
+	WebUI.uploadFile(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_file'), audioPath)
 	WebUI.delay(10)
 	WebUI.verifyTextPresent('Upload Complete', true, FailureHandling.STOP_ON_FAILURE)
 	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_close_button'))

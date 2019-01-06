@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>clear_vimeo_url</name>
+   <name>enable_button</name>
    <tag></tag>
-   <elementGuidId>2786adde-adfc-459b-bf4a-580a35c3014c</elementGuidId>
+   <elementGuidId>eca57603-1327-46c6-867b-d97f7c30d524</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@name='clear_vimeo_url']</value>
+         <value>//input[@value='Enable']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

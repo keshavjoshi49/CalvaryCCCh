@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@value='Disable']</value>
+         <value>//input[@name='clear_youtube_url']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

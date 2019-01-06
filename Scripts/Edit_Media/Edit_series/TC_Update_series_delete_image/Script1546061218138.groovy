@@ -18,10 +18,14 @@ import org.openqa.selenium.Keys as Keys
 
 
 //This test case check that the uploading a series image.
-//Edit the media that is on the top.
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+//This test case check that the editing of uploading an audio field.
+CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+
+//Pass username and passwords
+CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+
+//Click on the first media:
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 boolean delete;
 try
@@ -40,25 +44,24 @@ if (delete)
 {
 	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
 	WebUI.acceptAlert()
+
 }
 else
 {
 	WebUI.uploadFile(findTestObject('Edit_Media/Edit_series_fields/upload_series_image'), imagePath)
-	WebUI.delay(5)
+	//WebUI.delay(5)
+	//Save the series
+	CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
+	//Delete the uploaded image
 	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
 	WebUI.acceptAlert()
 }
-
-WebUI.click(findTestObject('Edit_Media/Edit_series_fields/Save_series_button'))
-WebUI.delay(5)
-WebUI.verifyTextPresent('Series Information Updated.', true, FailureHandling.STOP_ON_FAILURE)
-
-WebUI.click(findTestObject('Edit_Media/Buttons/submit_button'))
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series'), 10)
-
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+//Save the series
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
+//Submit the form
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+//Again open the same first media
+CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Assertion
 WebUI.verifyElementNotPresent(findTestObject('Edit_Media/Edit_series_fields/uploaded_series_image'), 10)

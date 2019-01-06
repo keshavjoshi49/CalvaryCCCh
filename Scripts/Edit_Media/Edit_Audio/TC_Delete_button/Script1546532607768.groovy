@@ -12,6 +12,8 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+
+import org.junit.After
 import org.openqa.selenium.Keys as Keys
 
 //This test case check that the editing of audio description field.
@@ -23,12 +25,11 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
-
-
+titleText=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/title_input_field'), 'value')
+println (titleText)
 //Click on Delete button
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.deleteForm'()
-
+//CustomKeywords.'calvaryCCH.pages.editMediaCenter.deleteForm'()
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 //Assertion
-//WebUI.verifyMatch(cdescription, udescription, false)
-
-
+WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/title'), titleText)
+//WebUI.verifyTextPresent(titleText, false)

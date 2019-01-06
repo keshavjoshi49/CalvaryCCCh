@@ -28,7 +28,7 @@ CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 WebUI.verifyTextPresent('Media Center Administration', true, FailureHandling.STOP_ON_FAILURE)
 //Vereify the presence of all the buttons on the page
 //1. Disable button
-WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 0, FailureHandling.STOP_ON_FAILURE)
+//WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 0, FailureHandling.STOP_ON_FAILURE)
 
 //2. Submit button
 WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/submit_button'), 0, FailureHandling.STOP_ON_FAILURE)
@@ -46,7 +46,7 @@ WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/clear_vimeo_url'),
 WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/clear_youtube_url'), 0, FailureHandling.STOP_ON_FAILURE)
 
 //7. Upload file button
-WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/upload_file_button'), 0, FailureHandling.STOP_ON_FAILURE)
+//WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/upload_file_button'), 0, FailureHandling.STOP_ON_FAILURE)
 
 //8. Save series information button
 WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/save_series_info_button'), 0, FailureHandling.STOP_ON_FAILURE)
