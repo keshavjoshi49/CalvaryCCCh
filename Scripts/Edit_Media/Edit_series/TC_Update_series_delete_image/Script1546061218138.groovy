@@ -45,11 +45,12 @@ if (delete)
 	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
 	WebUI.acceptAlert()
 
+	
+
 }
 else
 {
-	WebUI.uploadFile(findTestObject('Edit_Media/Edit_series_fields/upload_series_image'), imagePath)
-	//WebUI.delay(5)
+	CustomKeywords.'calvaryCCH.controls.controls.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
 	//Save the series
 	CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
 	//Delete the uploaded image

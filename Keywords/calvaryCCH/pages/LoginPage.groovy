@@ -40,6 +40,7 @@ import com.kms.katalon.core.mobile.helper.MobileElementCommonHelper
 import com.kms.katalon.core.util.KeywordUtil
 
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException
+import calvaryCCH.elements.PageElements as elements
 
 
 class LoginPage {
@@ -54,14 +55,14 @@ class LoginPage {
 	@Keyword
 	def loginToApplication(String username, String password) {
 
-		WebUI.setText(findTestObject('Login/username'), username)
-		WebUI.setText(findTestObject('Login/password'), password)
-		WebUI.click(findTestObject('Login/input'))
-		WebUI.waitForElementPresent(findTestObject('Login/logout'),10)
+		WebUI.setText(elements.login_name(), username)
+		WebUI.setText(elements.login_password(), password)
+		WebUI.click(elements.login_submit_button())
+		WebUI.waitForElementPresent(elements.home_logout_link(),10)
 	}
 	@Keyword
 	def logoutToApplication() {
-		WebUI.click(findTestObject('Login/logout'))
-		WebUI.waitForElementNotPresent(findTestObject('Login/logout'),10)
+		WebUI.click(elements.home_logout_link())
+		WebUI.waitForElementNotVisible(elements.home_logout_link(),10)
 	}
 }

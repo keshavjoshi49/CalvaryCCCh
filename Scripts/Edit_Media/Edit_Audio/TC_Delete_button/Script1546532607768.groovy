@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 import org.junit.After
 import org.openqa.selenium.Keys as Keys
-
+import calvaryCCH.elements.PageElements as elements
 //This test case check that the editing of audio description field.
 
 CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
@@ -25,11 +25,13 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
-titleText=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/title_input_field'), 'value')
+titleText=WebUI.getAttribute(elements.edit_media_title_field(), 'value')
+
 println (titleText)
 //Click on Delete button
-//CustomKeywords.'calvaryCCH.pages.editMediaCenter.deleteForm'()
+CustomKeywords.'calvaryCCH.pages.editMediaCenter.deleteForm'()
 CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 //Assertion
-WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/title'), titleText)
-//WebUI.verifyTextPresent(titleText, false)
+WebUI.verifyElementText(elements.home_title(), titleText)
+WebUI.verifyTextNotPresent(getAttribute(elements.home_title(),'value'), false)
+

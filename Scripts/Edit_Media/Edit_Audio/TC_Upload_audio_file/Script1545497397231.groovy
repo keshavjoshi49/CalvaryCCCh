@@ -35,23 +35,23 @@ if (b=='Delete')
 	//WebUI.delay(10)
 	
 	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_button'))
-	WebUI.uploadFile(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_file'), audioPath)
-	WebUI.delay(5)
+	CustomKeywords.'calvaryCCH.controls.controls.uploadFile'('Edit_Media/Edit_audio_fields/upload_audio_file', audioPath)
+	WebUI.delay(15)
 	WebUI.verifyTextPresent('Upload Complete', true, FailureHandling.STOP_ON_FAILURE)
 	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_close_button'))
-	println("link present")
+	//println("link present")
 
-        
+       
 }
 //If audio is not uploaded then upload a new file.
 else
 {
 	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_button'))
-	WebUI.uploadFile(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_file'), audioPath)
-	WebUI.delay(10)
+	CustomKeywords.'calvaryCCH.controls.controls.uploadFile'('Edit_Media/Edit_audio_fields/upload_audio_file', audioPath)
+	WebUI.delay(15)
 	WebUI.verifyTextPresent('Upload Complete', true, FailureHandling.STOP_ON_FAILURE)
 	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_close_button'))
-	println("link present")
+	
 }
 WebUI.delay(5)
 
@@ -63,5 +63,4 @@ CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Assertion
 WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/Delete_audio_link'), 'Delete')
-
 

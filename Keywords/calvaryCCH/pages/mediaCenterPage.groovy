@@ -17,13 +17,15 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
+import calvaryCCH.elements.PageElements as elements
+
 
 public class mediaCenterPage {
 
 	@Keyword
 	def clickOnMedia() {
-		WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/first_media_link'))
-		WebUI.switchToWindowTitle('CCCH - Media Center Administration')
-		WebUI.waitForElementPresent(findTestObject('Edit_Media/Buttons/submit_button'), 20)
+		WebUI.click(elements.home_first_media_link())
+		WebUI.switchToWindowTitle(elements.home_switch_title_text())
+		WebUI.waitForElementPresent(elements.edit_media_submit_button(), 10)
 	}
 }

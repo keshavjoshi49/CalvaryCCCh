@@ -13,7 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-
+import calvaryCCH.elements.PageElements as elements
 //This test case check that the editing of audio description field.
 
 CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
@@ -29,6 +29,6 @@ CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 CustomKeywords.'calvaryCCH.pages.editMediaCenter.cancelForm'()
 
 //Assertion
-WebUI.verifyElementPresent(findTestObject('Edit_Media/date'), 10)
+WebUI.verifyElementPresent(elements.home_date(), 10)
 
 

@@ -12,4 +12,25 @@
       <masked>false</masked>
       <name>imagePath</name>
    </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>8c02ccba-db09-4e4a-aee3-db20134dc59b</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>9745c35c-5b07-4a03-8297-6f5e4ee52855</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>86a91583-3c0e-4d94-a796-9230c3585540</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
 </TestCaseEntity>

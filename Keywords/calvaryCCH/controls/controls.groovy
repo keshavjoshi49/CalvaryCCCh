@@ -31,4 +31,11 @@ public class controls {
 	def selectValueInDropDown(String object,String value) {
 		WebUI.selectOptionByValue(findTestObject(object),value, false)
 	}
+	@Keyword
+	def uploadFile(String object,String filePath) {
+		WebUI.uploadFile(findTestObject(object), filePath)
+	}
+	def getAttribute(String object, String value) {
+		WebUI.getAttribute(object, value)
+	}
 }

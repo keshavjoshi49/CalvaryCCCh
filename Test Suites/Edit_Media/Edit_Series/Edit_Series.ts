@@ -55,7 +55,7 @@
    <testCaseLink>
       <guid>20137963-cb81-459f-a443-3ae356298298</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Update_series_description</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -112,7 +112,7 @@
    <testCaseLink>
       <guid>c2df4724-1ddf-483c-b4f6-4b08d5c8eeeb</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Upload_series_image</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -123,17 +123,53 @@
          </iterationEntity>
          <testDataId>Data Files/Edit_Media/TD_update_series</testDataId>
       </testDataLink>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>a0165355-7f2c-4420-8fc5-7f3ba7723016</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/Login/TD_valid_creds</testDataId>
+      </testDataLink>
+      <testDataLink>
+         <combinationType>ONE</combinationType>
+         <id>a6a50b77-db75-4239-88e5-35313e1d85e9</id>
+         <iterationEntity>
+            <iterationType>ALL</iterationType>
+            <value></value>
+         </iterationEntity>
+         <testDataId>Data Files/URL/url</testDataId>
+      </testDataLink>
       <variableLink>
          <testDataLinkId>9f0eb72d-c4a4-4a2c-bd9c-1ad8cbfdd53a</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>ImagePath</value>
          <variableId>9c469bf6-94ac-4a0c-9725-32a5ded30999</variableId>
       </variableLink>
+      <variableLink>
+         <testDataLinkId>a6a50b77-db75-4239-88e5-35313e1d85e9</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>url</value>
+         <variableId>8c02ccba-db09-4e4a-aee3-db20134dc59b</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>a0165355-7f2c-4420-8fc5-7f3ba7723016</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>username</value>
+         <variableId>9745c35c-5b07-4a03-8297-6f5e4ee52855</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId>a0165355-7f2c-4420-8fc5-7f3ba7723016</testDataLinkId>
+         <type>DATA_COLUMN</type>
+         <value>password</value>
+         <variableId>86a91583-3c0e-4d94-a796-9230c3585540</variableId>
+      </variableLink>
    </testCaseLink>
    <testCaseLink>
       <guid>8fd3934f-2244-43c2-bf93-24c57371bedb</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Update_series_delete_image</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
