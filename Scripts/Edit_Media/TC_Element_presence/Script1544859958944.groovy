@@ -12,11 +12,14 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-
+import locators.Locators as elements
 //This test case check that all the buttons and fields are present in the edit mode.
 
 //Launch application
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+
+
+//Launch application
+CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
 //Pass username and passwords
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)

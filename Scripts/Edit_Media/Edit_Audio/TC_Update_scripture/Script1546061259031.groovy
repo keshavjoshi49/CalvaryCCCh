@@ -12,9 +12,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-
+import locators.Locators as elements
 //This test case check that the editing of scripture field.
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
 //Pass username and passwords
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
@@ -24,19 +24,19 @@ CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 
 //Get the current scripture and update the different scripture
-cscripture = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
-println (cscripture)
+cscripture = WebUI.getAttribute(elements.edit_media_scripture(), 'value')
+
 if (cscripture=='1')
 {
-	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/book'),'2', false)
+	WebUI.selectOptionByValue(elements.edit_media_scripture(),'2', false)
 }
 else
 {
-	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/book'),'1', false)
+	WebUI.selectOptionByValue(elements.edit_media_scripture(),'1', false)
 }
 
 //Get the updated scripture value and submit the form
-uscripture = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
+uscripture = WebUI.getAttribute(elements.edit_media_scripture(), 'value')
 
 //Submit the form
 CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
@@ -44,7 +44,7 @@ CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
-uscripture1 = WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/book'), 'value')
+uscripture1 = WebUI.getAttribute(elements.edit_media_scripture(), 'value')
 
 //Assertion
 WebUI.verifyMatch(uscripture, uscripture1, false)

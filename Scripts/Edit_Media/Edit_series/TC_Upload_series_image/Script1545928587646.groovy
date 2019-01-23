@@ -41,12 +41,12 @@ if(delete)
 {
 	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
 	WebUI.acceptAlert()
-	CustomKeywords.'calvaryCCH.controls.controls.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
+	CustomKeywords.'basePages.BasePage.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
 }
 
 else
 {
-	CustomKeywords.'calvaryCCH.controls.controls.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
+	CustomKeywords.'basePages.BasePage.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
 }
 //Save the series 
 CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()

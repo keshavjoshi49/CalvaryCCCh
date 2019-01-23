@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 
 import org.junit.After
 import org.openqa.selenium.Keys as Keys
-
+import locators.Locators as elements
 
 //This test case check that the uploading a series image.
 //This test case check that the editing of uploading an audio field.
@@ -30,7 +30,7 @@ CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 boolean delete;
 try
 {
-	WebUI.verifyElementPresent(findTestObject('Edit_Media/Edit_series_fields/uploaded_series_image'), 10)
+	WebUI.verifyElementPresent(elements.edit_media_uploaded_series_image(), 10)
 	delete=true;
 }
 catch(Exception ex)
@@ -42,7 +42,7 @@ println(delete)
 
 if (delete)
 {
-	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
+	WebUI.click(elements.edit_media_delete_series_image_button())
 	WebUI.acceptAlert()
 
 	
@@ -50,11 +50,12 @@ if (delete)
 }
 else
 {
-	CustomKeywords.'calvaryCCH.controls.controls.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
+	//CustomKeywords.'basePages.BasePage.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
+	CustomKeywords.'calvaryCCH.pages.editMediaCenter.uploadFile'(imagePath)
 	//Save the series
 	CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
 	//Delete the uploaded image
-	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
+	WebUI.click(elements.edit_media_delete_series_image_button())
 	WebUI.acceptAlert()
 }
 //Save the series
@@ -65,5 +66,5 @@ CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Assertion
-WebUI.verifyElementNotPresent(findTestObject('Edit_Media/Edit_series_fields/uploaded_series_image'), 10)
+WebUI.verifyElementNotPresent(elements.edit_media_uploaded_series_image(), 10)
 

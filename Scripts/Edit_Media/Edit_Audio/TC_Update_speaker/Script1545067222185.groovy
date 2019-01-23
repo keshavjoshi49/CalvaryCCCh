@@ -13,9 +13,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-
+import locators.Locators as elements
 //This test case check that the editing of audio speaker field.
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
 //Pass username and passwords
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
@@ -24,14 +24,14 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Add new speaker and save the speaker name and save the form.
-WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/speaker_drop_down'),'zzznew', false)
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/speaker_input_field'), 10)
-WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/speaker_input_field'),speakerText)
-cspeaker=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/speaker_input_field'),'value')
+WebUI.selectOptionByValue(elements.edit_media_speaker_drop_down(),elements.getEdit_media_speaker_drop_down_value(), false)
+WebUI.waitForElementPresent(elements.edit_media_speaker_input_field(), 10)
+WebUI.setText(elements.edit_media_speaker_input_field(),speakerText)
+cspeaker=WebUI.getAttribute(elements.edit_media_speaker_input_field(),'value')
 
 
 //Submit the form
 CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 //Assertion
-WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/speaker'), cspeaker)
+WebUI.verifyElementText(elements.home_speaker(), cspeaker)
 

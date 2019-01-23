@@ -15,10 +15,10 @@ import internal.GlobalVariable as GlobalVariable
 
 import org.junit.After
 import org.openqa.selenium.Keys as Keys
-
+import locators.Locators as elements
 //This test case check that the editing of audio description field.
 
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
 //Pass username and passwords
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
@@ -27,7 +27,7 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 boolean disable
 try {
-		WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
+		WebUI.verifyElementPresent(elements.edit_media_disable_button(), 10)
 		disable=true;
 	} 
 catch (Exception e) 
@@ -50,5 +50,5 @@ else
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 //Assertion
-WebUI.verifyElementPresent(findTestObject('Edit_Media/Buttons/enable_button'), 10)
+WebUI.verifyElementPresent(elements.edit_media_enable_button(), 10)
 

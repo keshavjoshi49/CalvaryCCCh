@@ -12,16 +12,10 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
-import java.text.DateFormat
-import java.util.Date
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
-
-//string d ='12/09/2018'
-//
-//Date ud = new SimpleDateFormat("MM/dd/yyyy").parse(d)
-//
-//println(ud)
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'('https://dev61.calvarycch.org/content/admin_login.php')
-CustomKeywords.'calvaryCCH.controls.controls.setText'('Login/username', 'asdf')
+String date="01/05/2019"
+DateFormat parser = new SimpleDateFormat("yyyy-M-d"); 
+Date date1 = (Date) parser.parse(date);
+println (date1)

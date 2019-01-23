@@ -17,7 +17,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
-import calvaryCCH.elements.PageElements as elements
+import locators.Locators as elements
+import basePages.BasePage as base
 
 public class editMediaCenter {
 	@Keyword
@@ -53,5 +54,10 @@ public class editMediaCenter {
 		WebUI.click(elements.edit_media_save_series_button())
 		WebUI.delay(10)
 		WebUI.verifyTextPresent(elements.edit_media_save_series_text(), true)
+	}
+	@Keyword
+	def uploadFile(filePath) {
+	
+		base.uploadFile(elements.edit_media_upload_audio_file(), filePath)
 	}
 }

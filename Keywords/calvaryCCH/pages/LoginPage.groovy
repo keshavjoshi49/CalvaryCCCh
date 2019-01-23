@@ -19,6 +19,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 
 import internal.GlobalVariable
+import locators.Locators
 import sun.management.counter.StringCounter
 import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
@@ -40,29 +41,31 @@ import com.kms.katalon.core.mobile.helper.MobileElementCommonHelper
 import com.kms.katalon.core.util.KeywordUtil
 
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException
-import calvaryCCH.elements.PageElements as elements
+
 
 
 class LoginPage {
-
 	@Keyword
 	def lauchApplication (String url) {
+
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
 		WebUI.deleteAllCookies()
 		WebUI.navigateToUrl(url)
 	}
+
+
 	@Keyword
 	def loginToApplication(String username, String password) {
 
-		WebUI.setText(elements.login_name(), username)
-		WebUI.setText(elements.login_password(), password)
-		WebUI.click(elements.login_submit_button())
-		WebUI.waitForElementPresent(elements.home_logout_link(),10)
+		WebUI.setText(Locators.login_name(), username)
+		WebUI.setText(Locators.login_password(), password)
+		WebUI.click(Locators.login_submit_button())
+		WebUI.waitForElementPresent(Locators.home_logout_link(),10)
 	}
 	@Keyword
 	def logoutToApplication() {
-		WebUI.click(elements.home_logout_link())
-		WebUI.waitForElementNotVisible(elements.home_logout_link(),10)
+		WebUI.click(Locators.home_logout_link())
+		WebUI.waitForElementNotVisible(Locators.home_logout_link(),10)
 	}
 }

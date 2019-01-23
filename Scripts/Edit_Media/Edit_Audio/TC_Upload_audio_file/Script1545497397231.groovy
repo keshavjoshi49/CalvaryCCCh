@@ -13,9 +13,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-
+import locators.Locators as elements
 //This test case check that the editing of uploading an audio field.
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
 //Pass username and passwords
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
@@ -24,21 +24,22 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Check if already an audio is uploaded
-b=WebUI.getText(findTestObject('Edit_Media/Edit_audio_fields/Delete_audio_link'))
-println(b)
+b=WebUI.getText(elements.edit_media_delete_audio_link())
+//println(b)
 
 // If audio is already uploaded then delete the audio
 if (b=='Delete')
 {
-	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/Delete_audio_link'))
+	WebUI.click(elements.edit_media_delete_audio_link())
 	WebUI.acceptAlert()
 	//WebUI.delay(10)
 	
-	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_button'))
-	CustomKeywords.'calvaryCCH.controls.controls.uploadFile'('Edit_Media/Edit_audio_fields/upload_audio_file', audioPath)
+	WebUI.click(elements.edit_media_upload_audio_button())
+	
+	CustomKeywords.'calvaryCCH.pages.editMediaCenter.uploadFile'(audioPath)
 	WebUI.delay(15)
 	WebUI.verifyTextPresent('Upload Complete', true, FailureHandling.STOP_ON_FAILURE)
-	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_close_button'))
+	WebUI.click(elements.edit_media_upload_close_button())
 	//println("link present")
 
        
@@ -46,11 +47,11 @@ if (b=='Delete')
 //If audio is not uploaded then upload a new file.
 else
 {
-	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_audio_button'))
-	CustomKeywords.'calvaryCCH.controls.controls.uploadFile'('Edit_Media/Edit_audio_fields/upload_audio_file', audioPath)
+	WebUI.click(elements.edit_media_upload_audio_button())
+	CustomKeywords.'calvaryCCH.pages.editMediaCenter.uploadFile'(audioPath)
 	WebUI.delay(15)
 	WebUI.verifyTextPresent('Upload Complete', true, FailureHandling.STOP_ON_FAILURE)
-	WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/upload_close_button'))
+	WebUI.click(elements.edit_media_upload_close_button())
 	
 }
 WebUI.delay(5)
@@ -62,5 +63,5 @@ CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Assertion
-WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/Delete_audio_link'), 'Delete')
+WebUI.verifyElementText(elements.edit_media_delete_audio_link(), 'Delete')
 

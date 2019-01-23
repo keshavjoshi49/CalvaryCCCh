@@ -13,9 +13,10 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import locators.Locators as elements
 
 //This test case check that the editing of audio Vimeo url field.
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
 //Pass username and passwords
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
@@ -24,16 +25,16 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Select vimeo check box and add a new vimeo url and save the form.
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/vimeo_radio_button'))
-WebUI.click(findTestObject('Edit_Media/Edit_audio_fields/vimeo_clear_button'))
-WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/vimeo_input_field'), vimeoUrl)
+WebUI.click(elements.edit_media_vimeo_radio_button())
+WebUI.click(elements.edit_media_vimeo_clear_button())
+WebUI.setText(elements.edit_media_vimeo_input_field(), vimeoUrl)
 //Submit the form
 CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
-uvimeo=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/vimeo_input_field'), 'value')
+uvimeo=WebUI.getAttribute(elements.edit_media_vimeo_input_field(), 'value')
 
 //Assertion
 WebUI.verifyMatch(vimeoUrl, uvimeo, false)

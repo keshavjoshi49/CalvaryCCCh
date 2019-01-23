@@ -13,9 +13,10 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import locators.Locators as elements
 
 //This test case check that the editing of audio description field.
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
 //Pass username and passwords
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
@@ -24,9 +25,9 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Clear the Keyword field and add a new text and save it into varaible and then save the form.
-WebUI.clearText(findTestObject('Edit_Media/Edit_audio_fields/keywords'))
-WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/keywords'),keywords)
-ckeywords=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/keywords'), 'value')
+WebUI.clearText(elements.edit_media_keywords())
+WebUI.setText(elements.edit_media_keywords(),keywords)
+ckeywords=WebUI.getAttribute(elements.edit_media_keywords(), 'value')
 
 //Submit the form
 CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
@@ -34,7 +35,7 @@ CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 //Click on the first media:
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
-ukeywords=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/keywords'), 'value')
+ukeywords=WebUI.getAttribute(elements.edit_media_keywords(), 'value')
 //Assertion
 WebUI.verifyMatch(ckeywords, ukeywords, false)
 

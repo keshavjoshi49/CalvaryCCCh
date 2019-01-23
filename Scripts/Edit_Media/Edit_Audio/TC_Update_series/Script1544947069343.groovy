@@ -13,9 +13,12 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import org.stringtemplate.v4.compiler.STParser.element_return
+
+import locators.Locators as elements
 
 //This test case check that the editing of audio series field.
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
 //Pass username and passwords
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
@@ -24,15 +27,16 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 // Add a new series and save the series name and submit the form
-CustomKeywords.'calvaryCCH.controls.controls.selectValueInDropDown'('Edit_Media/Edit_audio_fields/series_drop_down', 'zzznew')
-//WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_audio_fields/series_drop_down'),'zzznew', false)
-WebUI.waitForElementPresent(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'), 10)
-WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'),seriesText)
-cseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/series_input_field'), 'value')
+//CustomKeywords.'basePages.BasePage.selectValueInDropDown'('Edit_Media/Edit_audio_fields/series_drop_down', 'zzznew')
+CustomKeywords.'basePages.BasePage.selectValueInDropDown'()
+
+WebUI.waitForElementPresent(elements.edit_media_series_input_field(), 10)
+WebUI.setText(elements.edit_media_series_input_field(),seriesText)
+cseries=WebUI.getAttribute(elements.edit_media_series_input_field(), 'value')
 
 //Submit the form
 CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 
 //Assertion
-WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/series'), cseries)
+WebUI.verifyElementText(elements.edit_media_series(), cseries)
 

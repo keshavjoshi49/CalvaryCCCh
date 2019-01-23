@@ -13,8 +13,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import locators.Locators as elements
 //This test case check that the editing of audio Title field.
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
 //Pass username and passwords
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
@@ -23,14 +24,13 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, passwor
 CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
 
 //Clear the title field and add a new title and save the form.
-WebUI.clearText(findTestObject('Edit_Media/Edit_audio_fields/title_input_field'))
-WebUI.setText(findTestObject('Edit_Media/Edit_audio_fields/title_input_field'),titleText)
-ctitle=WebUI.getAttribute(findTestObject('Edit_Media/Edit_audio_fields/title_input_field'), 'value')
-//WebUI.delay(5)
+WebUI.clearText(elements.edit_media_title_input_field())
+WebUI.setText(elements.edit_media_title_input_field(),titleText)
+ctitle=WebUI.getAttribute(elements.edit_media_title_input_field(), 'value')
 
 //Submit the form
 CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 
 //Assertion
-WebUI.verifyElementText(findTestObject('Edit_Media/Edit_audio_fields/title'), ctitle)
-println("pass")
+WebUI.verifyElementText(elements.home_title(), ctitle)
+

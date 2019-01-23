@@ -15,10 +15,10 @@ import internal.GlobalVariable as GlobalVariable
 
 import org.junit.After
 import org.openqa.selenium.Keys as Keys
-import calvaryCCH.elements.PageElements as elements
+import locators.Locators as elements
 //This test case check that the editing of audio description field.
 
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
 //Pass username and passwords
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
@@ -34,4 +34,8 @@ CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
 //Assertion
 WebUI.verifyElementText(elements.home_title(), titleText)
 WebUI.verifyTextNotPresent(getAttribute(elements.home_title(),'value'), false)
+
+
+
+
 
