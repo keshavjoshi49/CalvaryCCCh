@@ -20,7 +20,7 @@ CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 
 //Get the current scripture and update the different scripture
@@ -39,10 +39,10 @@ else
 uscripture = WebUI.getAttribute(elements.edit_media_scripture(), 'value')
 
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 uscripture1 = WebUI.getAttribute(elements.edit_media_scripture(), 'value')
 

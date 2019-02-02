@@ -13,24 +13,28 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import locators.Locators as elements
-//This test case check that the editing of audio Title field.
-CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
+//This test case check the working of cancel button.
+
+
+//Launch application
+login.openUrl(url)
+
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
-//Clear the title field and add a new title and save the form.
-WebUI.clearText(elements.edit_media_title_input_field())
-WebUI.setText(elements.edit_media_title_input_field(),titleText)
-ctitle=WebUI.getAttribute(elements.edit_media_title_input_field(), 'value')
 
-//Submit the form
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+//Click on Cancel button and press accept the windows alert.
+emcp.emcpNoCancelForm()
 
 //Assertion
-WebUI.verifyElementText(elements.home_title(), ctitle)
+
+emcp.emcpVerifyCancelBtnPresence()
+
 

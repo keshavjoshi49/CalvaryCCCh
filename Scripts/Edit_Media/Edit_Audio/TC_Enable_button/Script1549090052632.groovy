@@ -12,25 +12,28 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
-import locators.Locators as elements
-//This test case check that the editing of audio Title field.
-CustomKeywords.'basePages.BasePage.lauchApplication'(url)
+import locators.Locators
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+import org.openqa.selenium.Keys as Keys
+
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
+//This test case check that the editing of audio description field.
+
+//Launch application
+login.openUrl(url)
+
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
-//Clear the title field and add a new title and save the form.
-WebUI.clearText(elements.edit_media_title_input_field())
-WebUI.setText(elements.edit_media_title_input_field(),titleText)
-ctitle=WebUI.getAttribute(elements.edit_media_title_input_field(), 'value')
-
-//Submit the form
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+//click on disable button
+emcp.emcpEnableForm()
 
 //Assertion
-WebUI.verifyElementText(elements.home_title(), ctitle)
+mcp.mcpOpenFirstMedia()
+WebUI.verifyElementPresent(Locators.edit_media_disable_button(), 10)
 

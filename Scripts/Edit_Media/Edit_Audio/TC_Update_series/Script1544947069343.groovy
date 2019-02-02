@@ -24,7 +24,7 @@ CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 // Add a new series and save the series name and submit the form
 //CustomKeywords.'basePages.BasePage.selectValueInDropDown'('Edit_Media/Edit_audio_fields/series_drop_down', 'zzznew')
@@ -35,7 +35,7 @@ WebUI.setText(elements.edit_media_series_input_field(),seriesText)
 cseries=WebUI.getAttribute(elements.edit_media_series_input_field(), 'value')
 
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 
 //Assertion
 WebUI.verifyElementText(elements.edit_media_series(), cseries)

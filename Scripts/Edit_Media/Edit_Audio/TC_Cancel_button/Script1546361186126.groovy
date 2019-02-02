@@ -14,24 +14,27 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import locators.Locators as elements
-//This test case check that the editing of audio description field.
 
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
+//This test case check the working of cancel button.
 
 
 //Launch application
-CustomKeywords.'basePages.BasePage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 
 //Click on Cancel button and press accept the windows alert.
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.cancelForm'()
+editMediaCenterPageWorkflow.emcpCancelForm()
 
 //Assertion
-WebUI.verifyElementPresent(elements.home_date(), 10)
+mcp.mcpAdminMenuText()
 
 

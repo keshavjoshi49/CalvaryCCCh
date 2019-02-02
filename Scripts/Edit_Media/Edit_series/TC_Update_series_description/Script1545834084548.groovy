@@ -21,16 +21,16 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 WebUI.clearText(findTestObject('Edit_Media/Edit_series_fields/series_description'))
 WebUI.setText(findTestObject('Edit_Media/Edit_series_fields/series_description'), series_desc)
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.saveSeries'()
 
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 useries_desc=WebUI.getText(findTestObject('Edit_Media/Edit_series_fields/series_description'))
 

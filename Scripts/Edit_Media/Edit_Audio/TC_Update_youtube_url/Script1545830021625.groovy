@@ -22,17 +22,17 @@ CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 //Select vimeo check box and add a new vimeo url and save the form.
 WebUI.click(elements.edit_media_youtube_radio_button())
 WebUI.click(elements.edit_media_youtube_clear_button())
 WebUI.setText(elements.edit_media_youtube_input_field(), youtubeUrl)
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 uyoutube=WebUI.getAttribute(elements.edit_media_youtube_input_field(), 'value')
 //println(uyoutube)

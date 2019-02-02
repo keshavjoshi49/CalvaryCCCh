@@ -21,7 +21,7 @@ CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 //Check if already an audio is uploaded
 b=WebUI.getText(elements.edit_media_delete_audio_link())
@@ -36,7 +36,7 @@ if (b=='Delete')
 	
 	WebUI.click(elements.edit_media_upload_audio_button())
 	
-	CustomKeywords.'calvaryCCH.pages.editMediaCenter.uploadFile'(audioPath)
+	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.uploadFile'(audioPath)
 	WebUI.delay(15)
 	WebUI.verifyTextPresent('Upload Complete', true, FailureHandling.STOP_ON_FAILURE)
 	WebUI.click(elements.edit_media_upload_close_button())
@@ -48,7 +48,7 @@ if (b=='Delete')
 else
 {
 	WebUI.click(elements.edit_media_upload_audio_button())
-	CustomKeywords.'calvaryCCH.pages.editMediaCenter.uploadFile'(audioPath)
+	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.uploadFile'(audioPath)
 	WebUI.delay(15)
 	WebUI.verifyTextPresent('Upload Complete', true, FailureHandling.STOP_ON_FAILURE)
 	WebUI.click(elements.edit_media_upload_close_button())
@@ -57,10 +57,10 @@ else
 WebUI.delay(5)
 
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 //Assertion
 WebUI.verifyElementText(elements.edit_media_delete_audio_link(), 'Delete')

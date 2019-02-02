@@ -22,7 +22,7 @@ CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 
 //Clear the description field and add a new text and save it into varaible and then save the form.
@@ -31,10 +31,10 @@ WebUI.setText(elements.edit_media_description(),descriptionText)
 cdescription=WebUI.getAttribute(elements.edit_media_description(), 'value')
 
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 udescription=WebUI.getAttribute(elements.edit_media_description(), 'value')
 //Assertion

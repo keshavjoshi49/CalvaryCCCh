@@ -13,7 +13,7 @@
    <testCaseLink>
       <guid>03a8ed98-baf5-4c58-84d7-b95b83aa6adc</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Login/TC_valid_creds</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -26,7 +26,7 @@
       </testDataLink>
       <testDataLink>
          <combinationType>ONE</combinationType>
-         <id>52560fee-cbef-497a-a94b-718856d69e93</id>
+         <id>6d635009-512c-4497-a3ce-1176890ad932</id>
          <iterationEntity>
             <iterationType>ALL</iterationType>
             <value></value>
@@ -40,13 +40,13 @@
          <variableId>1a78a52c-11ab-432e-982a-c9740cbf0427</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>52560fee-cbef-497a-a94b-718856d69e93</testDataLinkId>
+         <testDataLinkId>6d635009-512c-4497-a3ce-1176890ad932</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>username</value>
          <variableId>cfdf9da2-de49-4845-9524-42a24b2cc088</variableId>
       </variableLink>
       <variableLink>
-         <testDataLinkId>52560fee-cbef-497a-a94b-718856d69e93</testDataLinkId>
+         <testDataLinkId>6d635009-512c-4497-a3ce-1176890ad932</testDataLinkId>
          <type>DATA_COLUMN</type>
          <value>password</value>
          <variableId>02f7527c-85b4-40e0-b654-8c281ddff16e</variableId>

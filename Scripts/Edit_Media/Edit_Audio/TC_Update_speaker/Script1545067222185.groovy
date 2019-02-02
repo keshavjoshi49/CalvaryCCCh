@@ -21,7 +21,7 @@ CustomKeywords.'basePages.BasePage.lauchApplication'(url)
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 //Add new speaker and save the speaker name and save the form.
 WebUI.selectOptionByValue(elements.edit_media_speaker_drop_down(),elements.getEdit_media_speaker_drop_down_value(), false)
@@ -31,7 +31,7 @@ cspeaker=WebUI.getAttribute(elements.edit_media_speaker_input_field(),'value')
 
 
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 //Assertion
 WebUI.verifyElementText(elements.home_speaker(), cspeaker)
 

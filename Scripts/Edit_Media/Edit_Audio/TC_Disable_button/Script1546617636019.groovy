@@ -12,43 +12,53 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import locators.Locators
 
-import org.junit.After
 import org.openqa.selenium.Keys as Keys
-import locators.Locators as elements
+
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 //This test case check that the editing of audio description field.
 
-CustomKeywords.'basePages.BasePage.lauchApplication'(url)
+//Launch application
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
-boolean disable
-try {
-		WebUI.verifyElementPresent(elements.edit_media_disable_button(), 10)
-		disable=true;
-	} 
-catch (Exception e) 
-{
-	disable=false;
-}
+mcp.mcpOpenFirstMedia()
 
-if(disable)
-{
-	//Click on disable button
-	CustomKeywords.'calvaryCCH.pages.editMediaCenter.disableForm'()
-}
-else
-{
-	//Click on enable button
-	CustomKeywords.'calvaryCCH.pages.editMediaCenter.enableForm'()
-	CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
-	CustomKeywords.'calvaryCCH.pages.editMediaCenter.disableForm'()
-}
-//Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+//click on disable button
+emcp.emcpDisableForm()
+
+//boolean disable
+//try {
+//		WebUI.verifyElementPresent(elements.edit_media_disable_button(), 10)
+//		disable=true;
+//	} 
+//catch (Exception e) 
+//{
+//	disable=false;
+//}
+//
+//if(disable)
+//{
+//	//Click on disable button
+//	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.disableForm'()
+//}
+//else
+//{
+//	//Click on enable button
+//	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.enableForm'()
+//	CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+//	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.disableForm'()
+//}
+////Click on the first media:
+//CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 //Assertion
-WebUI.verifyElementPresent(elements.edit_media_enable_button(), 10)
+//Println("complete")
+mcp.mcpOpenFirstMedia()
+WebUI.verifyElementPresent(Locators.edit_media_enable_button(), 10)
 

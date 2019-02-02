@@ -13,29 +13,28 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-import org.junit.After
 import org.openqa.selenium.Keys as Keys
-import locators.Locators as elements
-//This test case check that the editing of audio description field.
 
-CustomKeywords.'basePages.BasePage.lauchApplication'(url)
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
+//This test case check that the deletion of media field.
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Launch application
+login.openUrl(url)
+
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
-titleText=WebUI.getAttribute(elements.edit_media_title_field(), 'value')
+mcp.mcpOpenFirstMedia()
 
-println (titleText)
+titleText=WebUI.getAttribute(Locators.edit_media_title_field(), 'value')
+
+
 //Click on Delete button
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.deleteForm'()
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+emcp.emcpDeleteForm()
+
 //Assertion
-WebUI.verifyElementText(elements.home_title(), titleText)
-WebUI.verifyTextNotPresent(getAttribute(elements.home_title(),'value'), false)
 
-
-
-
-
+WebUI.verifyTextNotPresent(titleText, false)

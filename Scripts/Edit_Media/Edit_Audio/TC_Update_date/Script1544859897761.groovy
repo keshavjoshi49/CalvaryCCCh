@@ -28,7 +28,7 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 //Get the current month and update the different month
 month = WebUI.getAttribute(elements.edit_media_month(), 'value')
@@ -50,7 +50,7 @@ println(date)
 Date date1=new SimpleDateFormat("dd/M/yyyy").parse(date)
 println (date1)
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 
 
 //Get the date on the listing page and compare it with previous date.

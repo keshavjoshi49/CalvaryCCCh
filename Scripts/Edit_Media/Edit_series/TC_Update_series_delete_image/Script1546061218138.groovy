@@ -25,7 +25,7 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 boolean delete;
 try
@@ -51,19 +51,19 @@ if (delete)
 else
 {
 	//CustomKeywords.'basePages.BasePage.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
-	CustomKeywords.'calvaryCCH.pages.editMediaCenter.uploadFile'(imagePath)
+	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.uploadFile'(imagePath)
 	//Save the series
-	CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
+	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.saveSeries'()
 	//Delete the uploaded image
 	WebUI.click(elements.edit_media_delete_series_image_button())
 	WebUI.acceptAlert()
 }
 //Save the series
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.saveSeries'()
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 //Again open the same first media
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 //Assertion
 WebUI.verifyElementNotPresent(elements.edit_media_uploaded_series_image(), 10)

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>This test case will check for updated speaker</description>
+   <name>TC_Cancel_button_cancel</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>27ae953a-d1b0-42ae-9295-4be190e22405</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>1a9e4f9c-17da-43b0-82c3-b6e06fee04d2</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>0b43635e-9565-4e74-a9dc-380d3e75a7cf</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>44b3ab7c-f9c1-49dc-ae5f-76cf138dcf53</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+</TestCaseEntity>

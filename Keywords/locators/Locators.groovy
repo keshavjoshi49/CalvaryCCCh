@@ -27,7 +27,7 @@ class Locators {
 	static def login_password(){findTestObject('Login/password')}
 	static def login_submit_button(){findTestObject('Login/input')}
 	static def login_invalid_creds_text(){'Invalid username or password'}
-	
+
 	//Home Page
 
 	static def home_logout_link(){findTestObject('Login/logout')}
@@ -63,12 +63,12 @@ class Locators {
 	static def edit_media_vimeo_radio_button(){findTestObject('Edit_Media/Edit_audio_fields/vimeo_radio_button')}
 	static def edit_media_vimeo_clear_button(){findTestObject('Edit_Media/Edit_audio_fields/vimeo_clear_button')}
 	static def edit_media_vimeo_input_field(){findTestObject('Edit_Media/Edit_audio_fields/vimeo_input_field')}
-	
+
 	static def edit_media_youtube_radio_button(){findTestObject('Edit_Media/Edit_audio_fields/youtube_radio_button')}
 	static def edit_media_youtube_clear_button(){findTestObject('Edit_Media/Edit_audio_fields/youtube_clear_button')}
 	static def edit_media_youtube_input_field(){findTestObject('Edit_Media/Edit_audio_fields/youtube_input_field')}
-	
-	
+
+
 	static def edit_media_delete_audio_link(){findTestObject('Edit_Media/Edit_audio_fields/Delete_audio_link')}
 	static def edit_media_upload_audio_button(){findTestObject('Edit_Media/Edit_audio_fields/upload_audio_button')}
 	static def edit_media_upload_audio_file(){findTestObject('Edit_Media/Edit_audio_fields/upload_audio_file')}
@@ -76,8 +76,8 @@ class Locators {
 
 	static def edit_media_uploaded_series_image(){findTestObject('Edit_Media/Edit_series_fields/uploaded_series_image')}
 	static def edit_media_delete_series_image_button(){findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button')}
-	
-	
+
+
 	//input fields
 	static def edit_media_title_field(){findTestObject('Edit_Media/Edit_audio_fields/title_input_field')}
 }

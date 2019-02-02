@@ -21,22 +21,35 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 import locators.Locators as elements
 public class BasePage {
-	@Keyword
-	def lauchApplication (String url) {
+
+	public static def lauchApplication (String url) {
 
 		WebUI.openBrowser('')
 		WebUI.maximizeWindow()
 		WebUI.deleteAllCookies()
 		WebUI.navigateToUrl(url)
 	}
-	@Keyword
-	def setText(String object,String value) {
-		WebUI.setText(findTestObject(object),value)
+
+	public static def setText(TestObject object,String value) {
+		WebUI.setText(object,value)
 	}
-	@Keyword
-	def click(String object) {
-		WebUI.click(findTestObject(object))
+
+	public static def click(TestObject object) {
+		WebUI.click(object)
 	}
+	//Verify methods
+	public static def verifyText(String text) {
+		WebUI.verifyTextPresent(text, true, FailureHandling.STOP_ON_FAILURE)
+	}
+	public static def verifyElementPresent(TestObject object) {
+		//WebUI.verifyElementPresent(object, true, FailureHandling.STOP_ON_FAILURE)
+		WebUI.verifyElementPresent(object, 10)
+	}
+	// Wait methods
+	public static def waitForElement(TestObject object){
+		WebUI.waitForElementPresent(object,10)
+	}
+
 	@Keyword
 	def selectValueInDropDown() {
 

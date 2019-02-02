@@ -22,7 +22,7 @@ CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
 CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 //check if delete button is present
 boolean delete;
@@ -49,12 +49,12 @@ else
 	CustomKeywords.'basePages.BasePage.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
 }
 //Save the series 
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.saveSeries'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.saveSeries'()
 //submit the form
-CustomKeywords.'calvaryCCH.pages.editMediaCenter.submitForm'()
+CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.mediaCenterPage.clickOnMedia'()
+CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
 
 
 //Assertion
