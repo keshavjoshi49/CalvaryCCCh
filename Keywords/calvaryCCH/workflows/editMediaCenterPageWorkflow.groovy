@@ -71,6 +71,10 @@ public class editMediaCenterPageWorkflow {
 		}
 	}
 
+	public static def emcpUploadFile(String filePath) {
+		EditMediaCenterSub.uploadFile(filePath)
+	}
+
 	//Verify element present
 	public static def emcpVerifyCancelBtnPresence(){
 

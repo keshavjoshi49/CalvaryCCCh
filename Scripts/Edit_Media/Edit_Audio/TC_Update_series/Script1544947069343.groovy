@@ -15,28 +15,31 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import org.stringtemplate.v4.compiler.STParser.element_return
 
-import locators.Locators as elements
+import locators.Locators
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 
 //This test case check that the editing of audio series field.
-CustomKeywords.'basePages.BasePage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 // Add a new series and save the series name and submit the form
 //CustomKeywords.'basePages.BasePage.selectValueInDropDown'('Edit_Media/Edit_audio_fields/series_drop_down', 'zzznew')
 CustomKeywords.'basePages.BasePage.selectValueInDropDown'()
 
-WebUI.waitForElementPresent(elements.edit_media_series_input_field(), 10)
-WebUI.setText(elements.edit_media_series_input_field(),seriesText)
-cseries=WebUI.getAttribute(elements.edit_media_series_input_field(), 'value')
+WebUI.waitForElementPresent(Locators.edit_media_series_input_field(), 10)
+WebUI.setText(Locators.edit_media_series_input_field(),seriesText)
+cseries=WebUI.getAttribute(Locators.edit_media_series_input_field(), 'value')
 
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+emcp.emcpSubmitForm()
 
 //Assertion
-WebUI.verifyElementText(elements.edit_media_series(), cseries)
+WebUI.verifyElementText(Locators.edit_media_series(), cseries)
 

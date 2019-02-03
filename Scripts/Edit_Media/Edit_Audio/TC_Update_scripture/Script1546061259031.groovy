@@ -12,39 +12,42 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import locators.Locators as elements
+import locators.Locators
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 //This test case check that the editing of scripture field.
-CustomKeywords.'basePages.BasePage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 
 //Get the current scripture and update the different scripture
-cscripture = WebUI.getAttribute(elements.edit_media_scripture(), 'value')
+cscripture = WebUI.getAttribute(Locators.edit_media_scripture(), 'value')
 
 if (cscripture=='1')
 {
-	WebUI.selectOptionByValue(elements.edit_media_scripture(),'2', false)
+	WebUI.selectOptionByValue(Locators.edit_media_scripture(),'2', false)
 }
 else
 {
-	WebUI.selectOptionByValue(elements.edit_media_scripture(),'1', false)
+	WebUI.selectOptionByValue(Locators.edit_media_scripture(),'1', false)
 }
 
 //Get the updated scripture value and submit the form
-uscripture = WebUI.getAttribute(elements.edit_media_scripture(), 'value')
+uscripture = WebUI.getAttribute(Locators.edit_media_scripture(), 'value')
 
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+emcp.emcpSubmitForm()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
-uscripture1 = WebUI.getAttribute(elements.edit_media_scripture(), 'value')
+uscripture1 = WebUI.getAttribute(Locators.edit_media_scripture(), 'value')
 
 //Assertion
 WebUI.verifyMatch(uscripture, uscripture1, false)

@@ -14,7 +14,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 import org.openqa.selenium.Keys as Keys
-
+import locators.Locators
 import calvaryCCH.workflows.LoginPageWorkflow as login
 import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
 import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp

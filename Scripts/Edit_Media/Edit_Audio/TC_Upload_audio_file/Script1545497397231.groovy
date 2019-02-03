@@ -13,55 +13,59 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import locators.Locators as elements
+import locators.Locators
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 //This test case check that the editing of uploading an audio field.
-CustomKeywords.'basePages.BasePage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 //Check if already an audio is uploaded
-b=WebUI.getText(elements.edit_media_delete_audio_link())
-//println(b)
+b=WebUI.getText(Locators.edit_media_delete_audio_link())
 
 // If audio is already uploaded then delete the audio
 if (b=='Delete')
 {
-	WebUI.click(elements.edit_media_delete_audio_link())
+	WebUI.click(Locators.edit_media_delete_audio_link())
 	WebUI.acceptAlert()
 	//WebUI.delay(10)
 	
-	WebUI.click(elements.edit_media_upload_audio_button())
+	WebUI.click(Locators.edit_media_upload_audio_button())
 	
-	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.uploadFile'(audioPath)
+	WebUI.uploadFile(Locators.edit_media_upload_audio_file(), audioPath)
+	//CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.uploadFile'(audioPath)
 	WebUI.delay(15)
 	WebUI.verifyTextPresent('Upload Complete', true, FailureHandling.STOP_ON_FAILURE)
-	WebUI.click(elements.edit_media_upload_close_button())
+	WebUI.click(Locators.edit_media_upload_close_button())
 	//println("link present")
-
-       
+     
 }
 //If audio is not uploaded then upload a new file.
 else
 {
-	WebUI.click(elements.edit_media_upload_audio_button())
-	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.uploadFile'(audioPath)
+	WebUI.click(Locators.edit_media_upload_audio_button())
+	WebUI.uploadFile(Locators.edit_media_upload_audio_file(), audioPath)
+	//emcp.emcpUploadFile(audioPath)
+	//CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.uploadFile'(audioPath)
 	WebUI.delay(15)
 	WebUI.verifyTextPresent('Upload Complete', true, FailureHandling.STOP_ON_FAILURE)
-	WebUI.click(elements.edit_media_upload_close_button())
+	WebUI.click(Locators.edit_media_upload_close_button())
 	
 }
 WebUI.delay(5)
 
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+emcp.emcpSubmitForm()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 //Assertion
-WebUI.verifyElementText(elements.edit_media_delete_audio_link(), 'Delete')
+WebUI.verifyElementText(Locators.edit_media_delete_audio_link(), 'Delete')
 

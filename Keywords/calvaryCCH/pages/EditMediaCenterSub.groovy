@@ -40,27 +40,15 @@ public class EditMediaCenterSub {
 		BasePage.click(Locators.edit_media_disable_button())
 	}
 
-	//	@Keyword
-	//	def disableForm() {
-	//		WebUI.click(elements.edit_media_disable_button())
-	//		WebUI.acceptAlert()
-	//		WebUI.waitForElementPresent(elements.home_date(), 10)
-	//	}
-	//	@Keyword
-	//	def enableForm() {
-	//		WebUI.click(elements.edit_media_enable_button())
-	//		WebUI.acceptAlert()
-	//		WebUI.waitForElementPresent(elements.home_date(), 10)
-	//	}
+
 	@Keyword
 	def saveSeries() {
 		WebUI.click(Locators.edit_media_save_series_button())
 		WebUI.delay(10)
 		WebUI.verifyTextPresent(Locators.edit_media_save_series_text(), true)
 	}
-	@Keyword
-	def uploadFile(filePath) {
 
+	public static def uploadFile(filePath) {
 		BasePage.uploadFile(Locators.edit_media_upload_audio_file(), filePath)
 	}
 }

@@ -13,30 +13,33 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import locators.Locators as elements
+import locators.Locators
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 //This test case check that the editing of audio description field.
 
-CustomKeywords.'basePages.BasePage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 
 //Clear the description field and add a new text and save it into varaible and then save the form.
-WebUI.clearText(elements.edit_media_description())
-WebUI.setText(elements.edit_media_description(),descriptionText)
-cdescription=WebUI.getAttribute(elements.edit_media_description(), 'value')
+WebUI.clearText(Locators.edit_media_description())
+WebUI.setText(Locators.edit_media_description(),descriptionText)
+cdescription=WebUI.getAttribute(Locators.edit_media_description(), 'value')
 
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+emcp.emcpSubmitForm()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
-udescription=WebUI.getAttribute(elements.edit_media_description(), 'value')
+udescription=WebUI.getAttribute(Locators.edit_media_description(), 'value')
 //Assertion
 WebUI.verifyMatch(cdescription, udescription, false)
 

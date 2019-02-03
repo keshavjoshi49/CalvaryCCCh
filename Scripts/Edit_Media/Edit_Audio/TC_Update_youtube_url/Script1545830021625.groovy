@@ -13,28 +13,31 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import locators.Locators as elements
+import locators.Locators
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 
 //This test case check that the editing of audio Youtube url field.
-CustomKeywords.'basePages.BasePage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 //Select vimeo check box and add a new vimeo url and save the form.
-WebUI.click(elements.edit_media_youtube_radio_button())
-WebUI.click(elements.edit_media_youtube_clear_button())
-WebUI.setText(elements.edit_media_youtube_input_field(), youtubeUrl)
+WebUI.click(Locators.edit_media_youtube_radio_button())
+WebUI.click(Locators.edit_media_youtube_clear_button())
+WebUI.setText(Locators.edit_media_youtube_input_field(), youtubeUrl)
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+emcp.emcpSubmitForm()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
-uyoutube=WebUI.getAttribute(elements.edit_media_youtube_input_field(), 'value')
+uyoutube=WebUI.getAttribute(Locators.edit_media_youtube_input_field(), 'value')
 //println(uyoutube)
 
 //Assertion
