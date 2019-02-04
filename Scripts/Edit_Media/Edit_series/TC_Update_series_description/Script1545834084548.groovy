@@ -14,23 +14,23 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+import locators.Locators
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
-
-//Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
-
-WebUI.clearText(findTestObject('Edit_Media/Edit_series_fields/series_description'))
-WebUI.setText(findTestObject('Edit_Media/Edit_series_fields/series_description'), series_desc)
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.saveSeries'()
-
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
+
+emcp.emcpUpdateSeriesDesc(series_desc)
+
+//Click on the first media:
+mcp.mcpOpenFirstMedia()
 
 useries_desc=WebUI.getText(findTestObject('Edit_Media/Edit_series_fields/series_description'))
 

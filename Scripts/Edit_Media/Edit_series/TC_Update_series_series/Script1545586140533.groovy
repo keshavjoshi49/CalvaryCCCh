@@ -14,14 +14,18 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+import locators.Locators
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 cseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'), 'value')
 if (cseries==102)
@@ -34,18 +38,14 @@ else
 	WebUI.selectOptionByValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'),'102', false)
 }
 useries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'), 'value')
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.saveSeries'()
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+emcp.emcpSaveSeries()
+emcp.emcpSubmitForm()
+//CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.saveSeries'()
+//CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 eseries=WebUI.getAttribute(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'), 'value')
 //Assertion
 WebUI.verifyElementAttributeValue(findTestObject('Edit_Media/Edit_series_fields/series_drop_down'), useries, eseries, 0, FailureHandling.STOP_ON_FAILURE)
 
-//WebUI.click(findTestObject('Edit_Media/Buttons/delete_button'))
-//WebUI.acceptAlert()
-//WebUI.waitForPageLoad(5);
-//
-//WebUI.verifyElementNotPresent(findTestObject('Edit_Media/Buttons/disable_button'), 10)
-//WebUI.verifyTextPresent('Media Center Administration', true, FailureHandling.STOP_ON_FAILURE)

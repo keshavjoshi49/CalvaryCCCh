@@ -35,6 +35,10 @@ public class editMediaCenterPageWorkflow {
 		WebUI.acceptAlert()
 		BasePage.waitForElement(Locators.home_date())
 	}
+	public static def emcpSaveSeries(){
+		EditMediaCenterSub.saveSeries()
+		WebUI.delay(10)
+	}
 
 	public static def emcpDisableForm(){
 
@@ -52,6 +56,7 @@ public class editMediaCenterPageWorkflow {
 			WebUI.acceptAlert()
 		}
 	}
+
 	public static def emcpEnableForm(){
 
 
@@ -69,6 +74,13 @@ public class editMediaCenterPageWorkflow {
 			EditMediaCenterSub.enableForm()
 			WebUI.acceptAlert()
 		}
+	}
+	
+	public static def emcpUpdateSeriesDesc(String series_desc){
+		BasePage.clearText(Locators.edit_media_series_description())
+		BasePage.setText(Locators.edit_media_series_description(), series_desc)
+		EditMediaCenterSub.saveSeries()
+		EditMediaCenterSub.submitForm()
 	}
 
 	public static def emcpUploadFile(String filePath) {

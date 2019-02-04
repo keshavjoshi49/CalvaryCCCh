@@ -14,47 +14,69 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+import locators.Locators
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 
 //This test case check that the uploading a series image.
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 //check if delete button is present
-boolean delete;
-try
+b=WebUI.getAttribute(Locators.edit_media_delete_series_image_button(), 'style')
+println(b)
+if (b.contains('block'))
 {
-	WebUI.verifyElementPresent(findTestObject('Edit_Media/Edit_series_fields/uploaded_series_image'), 10)
-	delete=true;
-}
-catch(Exception ex)
-{
-	delete=false;
-}
-
-//If already image present then delete and upload it again
-if(delete)
-{
-	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
+	WebUI.click(Locators.edit_media_delete_series_image_button())
 	WebUI.acceptAlert()
-	CustomKeywords.'basePages.BasePage.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
+	WebUI.uploadFile(Locators.edit_media_upload_series_image(), imagePath)
+	//Save the series
+	emcp.emcpSaveSeries()
 }
-
 else
 {
-	CustomKeywords.'basePages.BasePage.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
+	WebUI.uploadFile(Locators.edit_media_upload_series_image(), imagePath)
+	emcp.emcpSaveSeries()
+	
 }
-//Save the series 
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.saveSeries'()
+//
+//boolean delete;
+//try
+//{
+//	WebUI.verifyElementPresent(findTestObject('Edit_Media/Edit_series_fields/uploaded_series_image'), 10)
+//	delete=true;
+//}
+//catch(Exception ex)
+//{
+//	delete=false;
+//}
+//
+////If already image present then delete and upload it again
+//if(delete)
+//{
+//	WebUI.click(findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button'))
+//	WebUI.acceptAlert()
+//	CustomKeywords.'basePages.BasePage.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
+//}
+//
+//else
+//{
+//	CustomKeywords.'basePages.BasePage.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
+//}
+
+//****************************
+
 //submit the form
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+emcp.emcpSubmitForm()
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 
 //Assertion

@@ -15,56 +15,47 @@ import internal.GlobalVariable as GlobalVariable
 
 import org.junit.After
 import org.openqa.selenium.Keys as Keys
-import locators.Locators as elements
+import locators.Locators
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 
 //This test case check that the uploading a series image.
 //This test case check that the editing of uploading an audio field.
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
-boolean delete;
-try
+b=WebUI.getAttribute(Locators.edit_media_delete_series_image_button(), 'style')
+println(b)
+if (b.contains('block'))
 {
-	WebUI.verifyElementPresent(elements.edit_media_uploaded_series_image(), 10)
-	delete=true;
-}
-catch(Exception ex)
-{
-	delete=false;
-}
-
-println(delete)
-
-if (delete)
-{
-	WebUI.click(elements.edit_media_delete_series_image_button())
+	WebUI.click(Locators.edit_media_delete_series_image_button())
 	WebUI.acceptAlert()
-
-	
 
 }
 else
 {
-	//CustomKeywords.'basePages.BasePage.uploadFile'('Edit_Media/Edit_series_fields/upload_series_image', imagePath)
-	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.uploadFile'(imagePath)
+	
+	WebUI.uploadFile(Locators.edit_media_upload_series_image(), imagePath)
 	//Save the series
-	CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.saveSeries'()
+	emcp.emcpSaveSeries()
 	//Delete the uploaded image
-	WebUI.click(elements.edit_media_delete_series_image_button())
+	WebUI.click(Locators.edit_media_delete_series_image_button())
 	WebUI.acceptAlert()
+
 }
-//Save the series
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.saveSeries'()
+
+
 //Submit the form
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+emcp.emcpSubmitForm()
 //Again open the same first media
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
 
 //Assertion
-WebUI.verifyElementNotPresent(elements.edit_media_uploaded_series_image(), 10)
+WebUI.verifyElementNotPresent(Locators.edit_media_uploaded_series_image(), 10)
 

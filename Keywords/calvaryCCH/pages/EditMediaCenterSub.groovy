@@ -40,13 +40,16 @@ public class EditMediaCenterSub {
 		BasePage.click(Locators.edit_media_disable_button())
 	}
 
-
-	@Keyword
-	def saveSeries() {
-		WebUI.click(Locators.edit_media_save_series_button())
-		WebUI.delay(10)
-		WebUI.verifyTextPresent(Locators.edit_media_save_series_text(), true)
+	public static def saveSeries(){
+		BasePage.click(Locators.edit_media_save_series_button())
 	}
+
+	//@Keyword
+	//	def saveSeries() {
+	//		WebUI.click(Locators.edit_media_save_series_button())
+	//		WebUI.delay(10)
+	//		WebUI.verifyTextPresent(Locators.edit_media_save_series_text(), true)
+	//	}
 
 	public static def uploadFile(filePath) {
 		BasePage.uploadFile(Locators.edit_media_upload_audio_file(), filePath)

@@ -19,7 +19,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
-import locators.Locators as elements
+import locators.Locators
 public class BasePage {
 
 	public static def lauchApplication (String url) {
@@ -28,6 +28,10 @@ public class BasePage {
 		WebUI.maximizeWindow()
 		WebUI.deleteAllCookies()
 		WebUI.navigateToUrl(url)
+	}
+
+	public static def clearText(TestObject object) {
+		WebUI.clearText(object)
 	}
 
 	public static def setText(TestObject object,String value) {
@@ -53,7 +57,7 @@ public class BasePage {
 	@Keyword
 	def selectValueInDropDown() {
 
-		WebUI.selectOptionByValue(elements.edit_media_series_drop_down(), elements.edit_media_series_drop_down_value, false)
+		WebUI.selectOptionByValue(Locators.edit_media_series_drop_down(), Locators.edit_media_series_drop_down_value, false)
 	}
 	@Keyword
 	static def uploadFile(String object,String filePath) {
