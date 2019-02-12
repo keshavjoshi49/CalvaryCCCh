@@ -26,7 +26,6 @@ public class EditMediaCenterSub {
 		BasePage.click(Locators.edit_media_cancel_button())
 	}
 
-
 	public static def submitForm() {
 		BasePage.click(Locators.edit_media_submit_button())
 	}
@@ -43,6 +42,8 @@ public class EditMediaCenterSub {
 	public static def saveSeries(){
 		BasePage.click(Locators.edit_media_save_series_button())
 	}
+
+
 
 	//@Keyword
 	//	def saveSeries() {

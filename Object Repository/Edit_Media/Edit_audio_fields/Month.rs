@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@type='text'and@name='month']</value>
+         <value>//select[@name='month']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

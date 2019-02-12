@@ -41,8 +41,6 @@ public class editMediaCenterPageWorkflow {
 	}
 
 	public static def emcpDisableForm(){
-
-
 		try {
 			WebUI.verifyElementPresent(Locators.edit_media_disable_button(),5)
 			EditMediaCenterSub.disableForm()
@@ -58,8 +56,6 @@ public class editMediaCenterPageWorkflow {
 	}
 
 	public static def emcpEnableForm(){
-
-
 		try {
 			WebUI.verifyElementPresent(Locators.edit_media_enable_button(),5)
 			println("try")
@@ -75,7 +71,7 @@ public class editMediaCenterPageWorkflow {
 			WebUI.acceptAlert()
 		}
 	}
-	
+
 	public static def emcpUpdateSeriesDesc(String series_desc){
 		BasePage.clearText(Locators.edit_media_series_description())
 		BasePage.setText(Locators.edit_media_series_description(), series_desc)
@@ -89,7 +85,6 @@ public class editMediaCenterPageWorkflow {
 
 	//Verify element present
 	public static def emcpVerifyCancelBtnPresence(){
-
 		BasePage.verifyElementPresent(Locators.edit_media_cancel_button())
 	}
 }

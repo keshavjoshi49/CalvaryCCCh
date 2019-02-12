@@ -54,6 +54,10 @@ public class BasePage {
 		WebUI.waitForElementPresent(object,10)
 	}
 
+	public static def dropDownSelect(TestObject object,String value) {
+		WebUI.selectOptionByValue(object, value, false)
+	}
+
 	@Keyword
 	def selectValueInDropDown() {
 

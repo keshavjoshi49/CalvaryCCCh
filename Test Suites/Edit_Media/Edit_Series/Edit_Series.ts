@@ -55,7 +55,7 @@
    <testCaseLink>
       <guid>20137963-cb81-459f-a443-3ae356298298</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Update_series_description</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -112,7 +112,7 @@
    <testCaseLink>
       <guid>c2df4724-1ddf-483c-b4f6-4b08d5c8eeeb</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Upload_series_image</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -169,7 +169,7 @@
    <testCaseLink>
       <guid>8fd3934f-2244-43c2-bf93-24c57371bedb</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_series/TC_Update_series_delete_image</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>

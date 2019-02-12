@@ -80,7 +80,7 @@ class Locators {
 	static def edit_media_delete_series_image_button(){findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button')}
 	static def edit_media_delete_series_button_No_display(){findTestObject('Edit_Media/Edit_series_fields/delete_series_image_button_No_display')}
 	static def edit_media_series_description(){findTestObject('Edit_Media/Edit_series_fields/series_description')}
-	
+
 	//input fields
 	static def edit_media_title_field(){findTestObject('Edit_Media/Edit_audio_fields/title_input_field')}
 }

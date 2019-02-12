@@ -11,50 +11,55 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
+import basePages.BasePage
 import internal.GlobalVariable as GlobalVariable
 import groovy.time.TimeCategory
 import java.text.DateFormat
 import java.util.Date
-import calvaryCCH.elements.PageElements as elements
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import locators.Locators as elements
+import locators.Locators
+import calvaryCCH.workflows.LoginPageWorkflow as login
+import calvaryCCH.workflows.editMediaCenterPageWorkflow as emcp
+import calvaryCCH.workflows.mediaCenterPageWorkflow as mcp
 //This test case check that the editing of date field.
 
 
-CustomKeywords.'calvaryCCH.pages.LoginPage.lauchApplication'(url)
+login.openUrl(url)
 
-//Pass username and passwords
-CustomKeywords.'calvaryCCH.pages.LoginPage.loginToApplication'(username, password)
+//Pass different username and passwords
+login.loginToApplication(username, password)
 
 //Click on the first media:
-CustomKeywords.'calvaryCCH.pages.MediaCenterPageSub.clickOnMedia'()
+mcp.mcpOpenFirstMedia()
+
 
 //Get the current month and update the different month
-month = WebUI.getAttribute(elements.edit_media_month(), 'value')
+month = WebUI.getAttribute(Locators.edit_media_month(), 'value')
+//WebUI.getAttribute(findTestObject(month))
+println (month)
 if (month=='12')
 {
-	WebUI.setText(elements.edit_media_month(),'10')
-	
+	//WebUI.selectOptionByValue(Locators.edit_media_month(), '10', false)
+	BasePage.dropDownSelect(Locators.edit_media_month(), '10')
 }
 else
 {
-	WebUI.setText(elements.edit_media_month(),'12')
+	BasePage.dropDownSelect(Locators.edit_media_month(), '12')
 }
 //Get updated month,day and year and create a date and then submit the form.
-umonth = WebUI.getAttribute(elements.edit_media_month(), 'value')
-day = WebUI.getAttribute(elements.edit_media_day(), 'value')
-year = WebUI.getAttribute(elements.edit_media_year(), 'value')
+umonth = WebUI.getAttribute(Locators.edit_media_month(), 'value')
+println (umonth)
+day = WebUI.getAttribute(Locators.edit_media_day(), 'value')
+year = WebUI.getAttribute(Locators.edit_media_year(), 'value')
 date=WebUI.concatenate(umonth,'/',day,'/',year)
 println(date)
-Date date1=new SimpleDateFormat("dd/M/yyyy").parse(date)
-println (date1)
-//Submit the form
-CustomKeywords.'calvaryCCH.pages.EditMediaCenterSub.submitForm'()
+emcp.emcpSubmitForm()
 
 
 //Get the date on the listing page and compare it with previous date.
-udate = WebUI.getText(elements.home_date())
+udate = WebUI.getText(Locators.home_date())
 
 println(udate)
 //Assertion

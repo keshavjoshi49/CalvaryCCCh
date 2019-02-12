@@ -13,7 +13,7 @@
    <testCaseLink>
       <guid>b0fcad20-3661-4f0a-96df-79de14b99009</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_date</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -64,7 +64,7 @@
    <testCaseLink>
       <guid>694e8328-263c-4cc3-ae05-8c432f1d763e</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_series</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -121,7 +121,7 @@
    <testCaseLink>
       <guid>e1756119-73e5-4159-8192-46a12caa7aaf</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_speaker</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -235,7 +235,7 @@
    <testCaseLink>
       <guid>248018ce-bbfc-47ae-b6dd-cefca1a86b36</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_scripture</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -277,7 +277,7 @@
    <testCaseLink>
       <guid>dab7f456-542f-4071-a5c6-bbd3fe4f8427</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_decription</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -334,7 +334,7 @@
    <testCaseLink>
       <guid>4bde1f76-a47f-45d5-a1ca-7147447cc6ed</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_keywords</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -391,7 +391,7 @@
    <testCaseLink>
       <guid>87737929-0312-4bfb-a447-82dc109c5782</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_vimeo_url</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -448,7 +448,7 @@
    <testCaseLink>
       <guid>cfe94313-97aa-4a45-be8e-26913326b0ab</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Upload_audio_file</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -505,7 +505,7 @@
    <testCaseLink>
       <guid>ac08caa7-6393-4b03-9b6c-f7a495387874</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Update_youtube_url</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -562,7 +562,7 @@
    <testCaseLink>
       <guid>ef844b5b-2ceb-469d-9b59-0443dad02793</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/TC_Element_presence</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -604,7 +604,7 @@
    <testCaseLink>
       <guid>95f3451e-1f6d-4cfb-9292-729b09a92eff</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Cancel_button</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -646,7 +646,7 @@
    <testCaseLink>
       <guid>ea30014a-f012-4bc1-b27d-5045d99aafe4</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Cancel_button_cancel</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -688,7 +688,7 @@
    <testCaseLink>
       <guid>cec5ff34-f7fb-428a-b91d-8133ed14fa74</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Delete_button</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -730,7 +730,7 @@
    <testCaseLink>
       <guid>975f0ef4-d2ff-4c77-acaf-e36e78fcb860</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Disable_button</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
@@ -772,7 +772,7 @@
    <testCaseLink>
       <guid>cd109013-df1a-4bfa-bcfe-00bcd3f44eae</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Edit_Media/Edit_Audio/TC_Enable_button</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
