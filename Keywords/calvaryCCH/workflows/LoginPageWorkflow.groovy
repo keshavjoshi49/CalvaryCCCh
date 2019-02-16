@@ -9,11 +9,11 @@ import calvaryCCH.pages.LoginPageSub
 import calvaryCCH.pages.mediaCenterPageSub
 
 
-public class LoginPageWorkflow
-//extends LoginPageSub
-{
+public class LoginPageWorkflow {
 
-	public static def openUrl(String url){BasePage.lauchApplication(url)}
+	public static def openUrl(String url){
+		BasePage.lauchApplication(url)
+	}
 
 	//Start All the methods for the texts on the page.
 	public static def loginInvalidCredsText(){LoginPageSub.loginInvalidCredsTextPresent()}
